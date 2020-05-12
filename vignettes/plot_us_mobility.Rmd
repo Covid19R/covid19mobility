@@ -1,0 +1,39 @@
+---
+title: "What are mobility trends like in the US?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plot_us_mobility}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Let's load the data, and filter down to the United States of America.
+
+```{r setup, warning=FALSE, message=FALSE}
+library(covid19mobility)
+library(dplyr)
+
+us_mobile <- refresh_covid19mobility_country() %>%
+  filter(location_code == "USA")
+
+```
+
+Now, let's plot it!
+
+```{r plot_us_mobility}
+library(ggplot2)
+
+
+ggplot(us_mobile,
+       aes(x = date, y = value, color = data_type)) +
+  geom_line(size = 1.1) +
+  theme_bw(base_size=12)
+
+```
