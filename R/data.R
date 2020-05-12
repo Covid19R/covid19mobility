@@ -1,0 +1,8 @@
+#' Demo Data of the Apple Covid-19 Mobility Data for Countries
+#'
+#'
+#' @format A data frame with 18207 rows and 8 variables:
+#' \describe{
+#' }
+#' @source \url{http://www.diamondse.info/}
+"covid19mobility_country_demo"

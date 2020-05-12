@@ -1,0 +1,10 @@
+^covid19mobility\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
+^cran-comments\.md$
+^\.github$
+setup.R
+scratch.R
+^CODE_OF_CONDUCT\.md$
+^data-raw$

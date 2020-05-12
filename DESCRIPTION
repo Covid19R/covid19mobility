@@ -1,0 +1,27 @@
+Package: covid19mobility
+Title: Fetches the Covid-19 Mobility Data from Apple
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jarrett",
+           family = "Byrnes",
+           role = c("aut", "cre"),
+           email = "jarrett.byrnes@umb.edu")
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Suggests: 
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports: 
+    jsonlite,
+    readr,
+    tidyr,
+    magrittr,
+    dplyr,
+    rnaturalearth,
+    utils,
+    lubridate
+Depends: 
+    R (>= 2.10)
