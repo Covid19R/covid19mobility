@@ -21,15 +21,19 @@ use_package("jsonlite")
 use_package("readr")
 use_package("tidyr")
 use_package("dplyr")
-#use_package("rnaturalearth")
+use_package("rnaturalearth", type = "Suggests")
 use_package("lubridate")
 use_package("utils")
 use_pipe()
+use_package("ggplot2", type = "Suggests")
 
 #setup the data for the package
 use_data_raw("covid19mobility_country_demo")
 use_r("data.R")
 use_r("globals.R")
+
+#make vignettes
+use_vignette("plot_us_mobility")
 
 #tests
 use_test("check_country_length")
@@ -38,3 +42,19 @@ use_test("check_country_length")
 devtools::spell_check()
 styler::style_pkg()
 
+#remake the website
+pkgdown::build_site()
+
+#build vignette
+devtools::install(build_vignettes = TRUE)
+
+#start github
+use_git(message = "Initial Commit")
+
+
+#Final checks for release
+#devtools::check_rhub()
+#devtools::check_win_release()
+devtools::release_checks()
+
+#devtools::release()
