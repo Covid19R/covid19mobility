@@ -1,7 +1,9 @@
 #' Add country codes to a data frame
 #'
-#' @param adf
+#' @param adf tibble of data
 #'
+#' @keywords internal
+#' @noRd
 #' @return tibble
 #'
 add_country_codes <- function(adf) {
@@ -18,16 +20,18 @@ add_country_codes <- function(adf) {
   # merge in country codes, and then pivot to covid19R standard and return
   location_code_merge_pivot(country_codes, adf,
     name_col = "NAME.EN",
-    code_col = "ISO_3166_3",
-    code_name = "iso_3166_3"
+    code_col = "ISO_3166_2",
+    code_name = "iso_3166_2"
   )
 }
 
 
 #' Add subregion codes to a data frame
 #'
-#' @param adf
+#' @param adf tibble of data
 #'
+#' @keywords internal
+#' @noRd
 #' @return tibble
 #'
 add_subregion_codes <- function(adf) {
@@ -87,8 +91,9 @@ add_subregion_codes <- function(adf) {
 
 #' Add city codes to a data frame
 #'
-#' @param adf
-#'
+#' @param adf tibble of data
+#' @keywords internal
+#' @noRd
 #' @return tibble
 #'
 add_city_codes <- function(adf) {
@@ -158,6 +163,8 @@ add_city_codes <- function(adf) {
 #' @param code_col what column in the codes tibble contains the standardized codes
 #' @param code_name what is the name of the code standard - defaults to the same as code_col
 #'
+#' @keywords internal
+#' @noRd
 #' @return
 #'
 location_code_merge_pivot <- function(codes, adf, name_col, code_col, code_name = code_col) {
