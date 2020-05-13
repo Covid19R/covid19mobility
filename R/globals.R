@@ -30,11 +30,5 @@ globalVariables(
     "alternative_name",
     "region",
     "NAME.EN",
-    "old_loc",
-
-
-    #some internal functions
-    "add_city_codes",
-    "add_country_codes",
-    "add_subregion_codes"
+    "old_loc"
 ))
