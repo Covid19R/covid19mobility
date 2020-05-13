@@ -25,7 +25,7 @@ refresh_covid19mobility_country <- function() {
     add_country_codes()
 
   # return the apple mobility data
-  mob_data
+  mob_data %>% dplyr::mutate(location_type = "country")
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Subregions
@@ -55,7 +55,7 @@ refresh_covid19mobility_subregion <- function() {
     add_subregion_codes()
 
   # return the apple mobility data
-  mob_data
+  mob_data %>% dplyr::mutate(location_type = "state")
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Cities
@@ -85,7 +85,7 @@ refresh_covid19mobility_city <- function() {
     add_city_codes()
 
   # return the apple mobility data
-  mob_data
+  mob_data %>% dplyr::mutate(location_type = "city")
 }
 
 
@@ -119,7 +119,7 @@ reshape_apple_mob_data <- function(mob_data) {
   # reshape dates
   mob_data %>%
     tidyr::pivot_longer(
-      cols = starts_with("2020"),
+      cols = dplyr::starts_with("2020"),
       names_to = "date",
       values_to = "value"
     ) %>%
