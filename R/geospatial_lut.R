@@ -24,20 +24,22 @@ ireland_counties <- data.frame(
     "Westmeath", "Wexford", "Wicklow"
   ),
   `gaelic_name` = c(
-    "Ceatharlach", "An Cabhán", "An Clár",
-    "Corcaigh", "Dún na nGall",
-    "Baile Átha Cliath",
-    "Gaillimh", "Ciarraí", "Cill Dara",
+    "Ceatharlach", "An Cabh\u00e1n", "An Cl\u00e1r",
+    "Corcaigh", "D\u00fan na nGall",
+    "Baile \u00e1tha Cliath",
+    "Gaillimh", "Ciarra\u00ed", "Cill Dara",
     "Cill Chainnigh", "Laois",
     "Liatroim", "Luimneach",
-    "An Longfort", "Lú", "Maigh Eo", "An Mhí",
-    "Muineachán", "Uíbh Fhailí",
-    "Ros Comáin", "Sligeach",
-    "Tiobraid Árann", "Port Láirge",
-    "An Iarmhí", "Loch Garman",
-    "Cill Mhantáin"
+    "An Longfort", "L\u00fa", "Maigh Eo", "An Mh\u00ed",
+    "Muineach\u00e1n", "U\u00edbh Fhail\u00ed",
+    "Ros Com\u00e1in", "Sligeach",
+    "Tiobraid \u00e1rann", "Port L\u00e1irge",
+    "An Iarmh\u00ed", "Loch Garman",
+    "Cill Mhant\u00e1in"
   )
 )
+
+#stringi::stri_escape_unicode("í")
 
 korea_province <- data.frame(
   stringsAsFactors = FALSE,
@@ -119,10 +121,10 @@ subregion_name_filter <- function(adf) {
       location = gsub("^Comunidad ", "", location),
       location = gsub("^District de ", "", location),
       location = gsub(" \\(Brasil\\)$", "", location),
-      location = gsub("Województwo ", "", location),
+      location = gsub("Wojew\u00f3dztwo ", "", location),
       location = gsub("Region ", "", location),
-      location = gsub("Región de ", "", location),
-      location = gsub("Región ", "", location),
+      location = gsub("Regi\u00f3n de ", "", location),
+      location = gsub("Regi\u00f3n ", "", location),
       location = gsub("Provincie ", "", location),
       location = gsub("^of  ", "", location)
     )
