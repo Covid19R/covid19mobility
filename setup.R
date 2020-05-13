@@ -15,6 +15,7 @@ use_code_of_conduct()
 use_r("refresh_covid19mobility")
 use_r("geospatial_utils.R")
 use_r("geospatial_lut.R")
+use_r("get_info_covid19mobility.R")
 
 #what packages will we need to make our lives easy
 use_package("jsonlite")
