@@ -2,7 +2,7 @@
 
 export("%>%")
 export(get_info_covid19mobility)
-export(refresh_covid19mobility_city)
-export(refresh_covid19mobility_country)
-export(refresh_covid19mobility_subregion)
+export(refresh_covid19mobility_apple_city)
+export(refresh_covid19mobility_apple_country)
+export(refresh_covid19mobility_sapple_ubregion)
 importFrom(magrittr,"%>%")

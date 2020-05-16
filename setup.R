@@ -12,7 +12,8 @@ usethis::use_mit_license(name = "Jarrett Byrnes")
 use_code_of_conduct()
 
 #add some functions
-use_r("refresh_covid19mobility")
+use_r("refresh_covid19mobility_apple")
+use_r("refresh_covid19mobility_google")
 use_r("geospatial_utils.R")
 use_r("geospatial_lut.R")
 use_r("get_info_covid19mobility.R")
