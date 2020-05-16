@@ -33,3 +33,21 @@ load_un_locode <- function(){
     )
 
 }
+
+
+load_subregion_codes <- function(){
+  readr::read_csv("https://github.com/olahol/iso-3166-2.js/raw/master/data.csv",
+                  col_names = c(
+                    "Country",
+                    "iso_3166_2",
+                    "name",
+                    "type",
+                    "Country iso_3166_2"
+                  ),
+                  col_types = "ccccc"
+  ) %>%
+    dplyr::bind_rows(ireland_counties, korea_province)
+
+}
+
+

@@ -37,17 +37,7 @@ add_country_codes <- function(adf) {
 add_subregion_codes <- function(adf) {
   # get subregional codes
   # from https://github.com/olahol/iso-3166-2.js
-  subregion_codes <- readr::read_csv("https://github.com/olahol/iso-3166-2.js/raw/master/data.csv",
-    col_names = c(
-      "Country",
-      "iso_3166_2",
-      "name",
-      "type",
-      "Country iso_3166_2"
-    ),
-    col_types = "ccccc"
-  ) %>%
-    dplyr::bind_rows(ireland_counties, korea_province)
+  subregion_codes <- load_subregion_codes()
 
   # subregion_codes <- rnaturalearth::ne_states(returnclass="sf")
 
