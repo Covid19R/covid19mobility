@@ -180,20 +180,3 @@ location_code_merge_pivot <- function(codes, adf, name_col, code_col, code_name 
     ) %>%
     dplyr::mutate(location_code_type = code_name)
 }
-
-# test code
-#
-# location_code_merge_pivot(country_codes, adf,
-#                           name_col = "NAME.EN",
-#                           code_col = "ISO_3166_3")
-
-#
-# f <- function(codes, name_col, code_col){
-#   country_codes %>%
-#     dplyr::select({{name_col}}, {{code_col}})
-# }
-#
-#
-# f(country_codes,
-#                           name_col = "NAME.EN",
-#                           code_col = "ISO_3166_3")
