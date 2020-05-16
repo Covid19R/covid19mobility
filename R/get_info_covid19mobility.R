@@ -19,7 +19,7 @@ get_info_covid19mobility <- function(){
     ~data_types, ~location_types,
     ~spatial_extent, ~has_geospatial_info,
 
-    "covid19mobility_country",
+    "covid19mobility_apple_country",
     "covid19mobility",
     "refresh_covid19mobility_country",
     "Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the country level.",
@@ -30,7 +30,7 @@ get_info_covid19mobility <- function(){
     "global", #HOW LARGE IS THE AREA COVERED BY THE WHOLE DATASET? COUNTRY? CONTINENT? WORLD? OTHER?
     FALSE, #IS THERE GEOSPATIAL INFORMATION, E.G. LAT/LONG? TRUE/FALSE
 
-    "covid19mobility_subregion",
+    "covid19mobility_apple_subregion",
     "covid19mobility",
     "refresh_covid19mobility_subregion",
     "Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the subregion (state) level.",

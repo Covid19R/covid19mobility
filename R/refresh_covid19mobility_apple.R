@@ -10,12 +10,12 @@
 #' @examples
 #' \dontrun{
 #'
-#' mob <- refresh_covid19mobility_country()
+#' mob <- refresh_covid19mobility_apple_country()
 #'
 #' head(mob)
 #' }
 #'
-refresh_covid19mobility_country <- function() {
+refresh_covid19mobility_apple_country <- function() {
   # import the apple mobility data
   mob_data <- import_apple_mob_data() %>%
     dplyr::filter(geo_type == "country/region")
@@ -40,12 +40,12 @@ refresh_covid19mobility_country <- function() {
 #' @examples
 #' \dontrun{
 #'
-#' mob <- refresh_covid19mobility_subregion()
+#' mob <- refresh_covid19mobility_apple_subregion()
 #'
 #' head(mob)
 #' }
 #'
-refresh_covid19mobility_subregion <- function() {
+refresh_covid19mobility_sapple_ubregion <- function() {
   # import the apple mobility data
   mob_data <- import_apple_mob_data() %>%
     dplyr::filter(geo_type == "sub-region")
@@ -70,12 +70,12 @@ refresh_covid19mobility_subregion <- function() {
 #' @examples
 #' \dontrun{
 #'
-#' mob <- refresh_covid19mobility_city()
+#' mob <- refresh_covid19mobility_apple_city()
 #'
 #' head(mob)
 #' }
 #'
-refresh_covid19mobility_city <- function() {
+refresh_covid19mobility_apple_city <- function() {
   # import the apple mobility data
   mob_data <- import_apple_mob_data() %>%
     dplyr::filter(geo_type == "city")
