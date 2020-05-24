@@ -39,8 +39,6 @@ add_subregion_codes <- function(adf) {
   # from https://github.com/olahol/iso-3166-2.js
   subregion_codes <- load_subregion_codes()
 
-  # subregion_codes <- rnaturalearth::ne_states(returnclass="sf")
-
   # make a data frame with modified locations for correct merging with international standards
   adf <- adf %>%
     dplyr::mutate(old_loc = location)
@@ -90,7 +88,7 @@ add_city_codes <- function(adf) {
  unlocode <- load_un_locode()
 
   # merge in codes and pivot to covid19R standard and return
-  adf2 <- location_code_merge_pivot(unlocode, adf,
+  adf <- location_code_merge_pivot(unlocode, adf,
     name_col = "name_en",
     code_col = "un_locode"
   )

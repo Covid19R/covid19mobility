@@ -39,7 +39,19 @@ get_info_covid19mobility <- function(){
     "driving, walking, transit", #COMMA SEPARATED STRING OF DATA TYPES
     "state", #COMMA SEPARATED STRING OF LOCATION TYPES
     "global", #HOW LARGE IS THE AREA COVERED BY THE WHOLE DATASET? COUNTRY? CONTINENT? WORLD? OTHER?
-    FALSE #IS THERE GEOSPATIAL INFORMATION, E.G. LAT/LONG? TRUE/FALSE
+    FALSE, #IS THERE GEOSPATIAL INFORMATION, E.G. LAT/LONG? TRUE/FALSE
+
+    "covid19mobility_apple_city",
+    "covid19mobility",
+    "refresh_covid19mobility_apple_city",
+    "Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the city level.",
+    "https://www.apple.com/covid19/mobility",
+    "https://www.apple.com/covid19/mobility",
+    "driving, walking, transit", #COMMA SEPARATED STRING OF DATA TYPES
+    "city", #COMMA SEPARATED STRING OF LOCATION TYPES
+    "global", #HOW LARGE IS THE AREA COVERED BY THE WHOLE DATASET? COUNTRY? CONTINENT? WORLD? OTHER?
+    TRUE #IS THERE GEOSPATIAL INFORMATION, E.G. LAT/LONG? TRUE/FALSE
+
   )
 
 }

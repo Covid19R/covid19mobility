@@ -98,7 +98,7 @@ import_apple_mob_data <- function() {
   # get the JSON that tells us where the data file is
   dat_json <- paste0(
     base_url,
-    "/covid19-mobility-data/current/v2/index.json"
+    "/covid19-mobility-data/current/v3/index.json"
   ) %>%
     jsonlite::fromJSON()
 
@@ -110,7 +110,9 @@ import_apple_mob_data <- function() {
   )
 
   # read in the data file as a tibble
-  readr::read_csv(dat_url)
+  suppressMessages(
+    readr::read_csv(dat_url)
+  )
 }
 
 # reshape the data to the covid19R standard

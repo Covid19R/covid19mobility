@@ -2,7 +2,7 @@ load_un_locode <- function(){
   # get city codes
   locode_url <- "https://github.com/jebyrnes/unlocodeR/raw/master/data/unlocode.rda"
   f <- tempfile()
-  utils::download.file(locode_url, f)
+  utils::download.file(locode_url, f, quiet=TRUE)
   load(f) # loads unlocode
   unlink(f)
 
@@ -27,6 +27,29 @@ load_un_locode <- function(){
       name_en = ifelse(name_en == "Saint Petersburg (ex Leningrad)", "Saint Petersburg - Russia", name_en),
       name_en = ifelse(name_en == "Brussel (Bruxelles)", "Brussels", name_en),
       name_en = ifelse(name_en == "Vienna", "Vienna_", name_en),
+      name_en = ifelse(name_en == "Bucuresti", "Bucharest", name_en),
+      name_en = ifelse(name_en == "Changhua", "Changhua County", name_en),
+      name_en = ifelse(name_en == "Chennai (ex Madras)", "Chennai", name_en),
+      name_en = ifelse(name_en == "Denpasar, Bali", "Denpasar", name_en),
+      name_en = ifelse(name_en == "Aparecida de Goiania", "Goi\u00e2nia", name_en),
+      name_en = ifelse(un_locode == "DE MGL", "Mönchengladbach", name_en),
+      name_en = ifelse(un_locode == "DE MUN", "Münster", name_en),
+      name_en = ifelse(un_locode == "JP OTU", "Otsu", name_en),
+      name_en = ifelse(un_locode == "US QPL", "Palmdale-Lancaster", name_en),
+      name_en = ifelse(un_locode == "US RS3", "Reno-Sparks", name_en),
+      name_en = ifelse(un_locode == "RU RND", "Rostov-on-Don", name_en),
+      name_en = ifelse(un_locode == "JP SDJ", "Sendai", name_en),
+      name_en = ifelse(un_locode == "KR SEL", "Seoul Capital Area", name_en),
+      name_en = ifelse(un_locode == "TW TXG", "Taichung–Changhua metropolitan area", name_en),
+      name_en = ifelse(un_locode == "TW TPE", "Taipei–Keelung–Taoyuan metropolitan area", name_en),
+      name_en = ifelse(un_locode == "US VCV", "Victorville-Hesperia", name_en),
+      name_en = ifelse(un_locode == "US WPH", "Waipahu", name_en),
+      name_en = ifelse(un_locode == "TW HSZ", "Hsinchu metropolitan area", name_en),
+      name_en = ifelse(un_locode == "SE MMA", "Malm\u00f6", name_en),
+      name_en = ifelse(un_locode == "BE LGG", "Li\u00e8ge", name_en),
+      name_en = ifelse(un_locode == "MX 9PI", "Le\u00f3n", name_en),
+      name_en = ifelse(un_locode == "MX JUZ", "Ju\u00e1rez", name_en),
+      name_en = ifelse(un_locode == "US EUG", "Eugene-Springfield", name_en),
       name_en = ifelse(un_locode == "AT VIE", "Vienna", name_en),
       name_en = ifelse(name_en == "Bridgeport", "Bridgeport_", name_en),
       name_en = ifelse(un_locode == "US BDR", "Bridgeport", name_en),
