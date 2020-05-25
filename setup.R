@@ -16,6 +16,7 @@ use_r("refresh_covid19mobility_apple")
 use_r("refresh_covid19mobility_google")
 use_r("geospatial_utils.R")
 use_r("geospatial_lut.R")
+use_r("geospatial_load.R")
 use_r("get_info_covid19mobility.R")
 
 #what packages will we need to make our lives easy

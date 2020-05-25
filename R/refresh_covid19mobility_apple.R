@@ -45,7 +45,7 @@ refresh_covid19mobility_apple_country <- function() {
 #' head(mob)
 #' }
 #'
-refresh_covid19mobility_sapple_ubregion <- function() {
+refresh_covid19mobility_apple_subregion <- function() {
   # import the apple mobility data
   mob_data <- import_apple_mob_data() %>%
     dplyr::filter(geo_type == "sub-region")

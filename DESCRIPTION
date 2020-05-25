@@ -1,11 +1,12 @@
 Package: covid19mobility
-Title: Fetches the Covid-19 Mobility Data from Apple
+Title: Fetches the Covid-19 Mobility Data from Different Sources
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jarrett",
            family = "Byrnes",
            role = c("aut", "cre"),
-           email = "jarrett.byrnes@umb.edu")
+           email = "jarrett.byrnes@umb.edu",
+           comment = c(ORCID = "0000-0002-9791-9472"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Suggests: 
