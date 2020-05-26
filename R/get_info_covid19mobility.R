@@ -21,7 +21,7 @@ get_info_covid19mobility <- function(){
 
     "covid19mobility_apple_country",
     "covid19mobility",
-    "refresh_covid19mobility_country",
+    "refresh_covid19mobility_apple_country",
     "Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the country level.",
     "https://www.apple.com/covid19/mobility",
     "https://www.apple.com/covid19/mobility",
@@ -32,7 +32,7 @@ get_info_covid19mobility <- function(){
 
     "covid19mobility_apple_subregion",
     "covid19mobility",
-    "refresh_covid19mobility_subregion",
+    "refresh_covid19mobility_apple_subregion",
     "Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the subregion (state) level.",
     "https://www.apple.com/covid19/mobility",
     "https://www.apple.com/covid19/mobility",
