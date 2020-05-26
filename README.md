@@ -49,11 +49,11 @@ get_info_covid19mobility() %>%
   knitr::kable()
 ```
 
-| data\_set\_name                   | function\_to\_get\_data               | data\_details                                                                                                                                                                         |
-| :-------------------------------- | :------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| covid19mobility\_apple\_country   | refresh\_covid19mobility\_country     | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the country level.           |
-| covid19mobility\_apple\_subregion | refresh\_covid19mobility\_subregion   | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the subregion (state) level. |
-| covid19mobility\_apple\_city      | refresh\_covid19mobility\_apple\_city | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the city level.              |
+| data\_set\_name                   | function\_to\_get\_data                    | data\_details                                                                                                                                                                         |
+| :-------------------------------- | :----------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| covid19mobility\_apple\_country   | refresh\_covid19mobility\_apple\_country   | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the country level.           |
+| covid19mobility\_apple\_subregion | refresh\_covid19mobility\_apple\_subregion | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the subregion (state) level. |
+| covid19mobility\_apple\_city      | refresh\_covid19mobility\_apple\_city      | Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the city level.              |
 
 The refresh methods bring in the different data sets. Currentail
 available are: \* `refresh_covid19mobility_apple_country()` - [Apple
