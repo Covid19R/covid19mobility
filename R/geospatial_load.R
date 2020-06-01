@@ -57,7 +57,7 @@ load_un_locode <- function(){
 
 }
 
-
+#https://gis.stackexchange.com/questions/1047/seeking-full-list-of-iso-alpha-2-and-iso-alpha-3-country-codes/99540#99540
 load_subregion_codes <- function(){
   readr::read_csv("https://github.com/olahol/iso-3166-2.js/raw/master/data.csv",
                   col_names = c(
@@ -71,6 +71,17 @@ load_subregion_codes <- function(){
   ) %>%
     dplyr::bind_rows(ireland_counties, korea_province)
 
+}
+
+load_subdivisions <- function(){
+
+  subdiv_url <- "https://github.com/jebyrnes/wikiISO31662/raw/master/data/iso_31662_subdivisions_extended.rda"
+  f <- tempfile()
+  utils::download.file(subdiv_url, f, quiet=TRUE)
+  load(f) # loads file
+  unlink(f)
+
+  return(iso_31662_subdivisions_extended)
 }
 
 

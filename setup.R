@@ -27,13 +27,16 @@ use_package("dplyr")
 use_package("rnaturalearth", type = "Suggests")
 use_package("lubridate")
 use_package("utils")
+use_package("tigris")
 use_pipe()
 use_package("ggplot2", type = "Suggests")
 
 #setup the data for the package
 use_data_raw("covid19mobility_country_demo")
+use_data_raw("nat_codes")
 use_r("data.R")
 use_r("globals.R")
+use_r("lut.R")
 
 #make vignettes
 use_vignette("plot_us_mobility")

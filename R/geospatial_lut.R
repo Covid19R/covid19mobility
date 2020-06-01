@@ -1,3 +1,8 @@
+#--------------------
+# For Apple Data ####
+#--------------------
+
+#from wikipedia
 ireland_counties <- data.frame(
   stringsAsFactors = FALSE,
   check.names = FALSE,
@@ -129,3 +134,148 @@ subregion_name_filter <- function(adf) {
       location = gsub("^of  ", "", location)
     )
 }
+
+
+
+#----------------
+# For Google ####
+#----------------
+
+goog_subdivision_lut <- function(gmob){
+
+  gmob_subdivisions <- gmob %>%
+    dplyr::filter(country_region != "Puerto Rico") %>% #Why is this a country?
+    dplyr::group_by(location_code, sub_region_1) %>%
+    dplyr::slice(1L) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(location_code, sub_region_1)
+
+
+  #for gmob
+  fix_subregion_clean <- . %>%
+    dplyr::mutate(
+      subregion_1_clean = gsub("State of ", "", subregion_1_clean),
+      subregion_1_clean = gsub("St. ", "Saint ", subregion_1_clean),
+      subregion_1_clean = gsub("City of ", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Parish", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Region$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" County$", "", subregion_1_clean),
+      subregion_1_clean = gsub("^County ", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Governorate$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Governate$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Governorate$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" District$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Voivodeship$", "", subregion_1_clean),
+      # subregion_1_clean = gsub(" Islands$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Council$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Department$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Municipality$", "", subregion_1_clean),
+      subregion_1_clean = gsub("s novads$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Province$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Area$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" district$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Autonomous", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Community$", "", subregion_1_clean),
+      subregion_1_clean = gsub("^Metropolitan Municipality of ", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Principal$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Principle$", "", subregion_1_clean),
+      subregion_1_clean = gsub(" Province$", "", subregion_1_clean),
+      subregion_1_clean = gsub("^Municipality of ", "", subregion_1_clean),
+      subregion_1_clean = gsub("^Administrative unit ", "", subregion_1_clean),
+      subregion_1_clean = gsub("^Decentralized Administration of ", "", subregion_1_clean),
+      subregion_1_clean = gsub("^Al ", "", subregion_1_clean),
+      subregion_1_clean = gsub("Flanders", "East Flanders", subregion_1_clean), #AUGH
+      subregion_1_clean = gsub("Normandy", "Upper Normandy", subregion_1_clean),
+      subregion_1_clean = gsub("Dar es Salam", "Dar es Salaam", subregion_1_clean),
+      subregion_1_clean = gsub("-", " ", subregion_1_clean),
+      subregion_1_clean = tolower(subregion_1_clean),#AUGH
+      subregion_1_clean = stringi::stri_trans_general(subregion_1_clean, "Latin-ASCII")
+    )
+
+  gmob_subdivisions <- gmob_subdivisions %>%
+    dplyr::mutate(subregion_1_clean = sub_region_1) %>%
+    fix_subregion_clean
+
+  #those last recalcitrant few
+  gmob_codefix <- tibble::tribble(
+    ~location_code,                                                                ~sub_region_1,                           ~subregion_1_clean,                    ~subregion_1_match,
+    "AE",                                                             "Umm Al Quawain",                             "umm al quawain",                      "umm al qaiwain",
+    "CL",                                                                    "Bio Bio",                                    "bio bio",                              "biobio",
+    "CL",                                          "Magallanes and Chilean Antarctica",          "magallanes and chilean antarctica",                          "magallanes",
+    "CO",                                                            "North Santander",                            "north santander",                  "norte de santander",
+    "CO",                                                 "San Andres and Providencia",                 "san andres and providencia",           "san andrés en providencia",
+    "EC",                                                          "Galápagos Islands",                          "galapagos islands",                           "galapagos",
+    "EG",                                                    "Ash Sharqia Governorate",                                "ash sharqia",                             "sharqia",
+    "EG",                                                     "El Beheira Governorate",                                 "el beheira",                             "beheira",
+    "EG",                                                        "Menofia Governorate",                                    "menofia",                             "monufia",
+    "ES",                                                        "Valencian Community",                                  "valencian",                 "valencian community",
+    "GB",                                                               "Bristol City",                               "bristol city",                             "bristol",
+    "GB",                                                       "Na h-Eileanan an Iar",                       "na h eileanan an iar",                      "outer hebrides",
+    "GR",               "Decentralized Administration of Epirus and Western Macedonia",               "epirus and western macedonia",                       "epirus region",
+    "GR",                       "Decentralized Administration of Macedonia and Thrace",                       "macedonia and thrace",        "eastern macedonia and thrace",
+    "GR", "Decentralized Administration of Peloponnese, Western Greece and the Ionian", "peloponnese, western greece and the ionian",                  "peloponnese region",
+    "GR",                                 "Decentralized Administration of the Aegean",                                 "the aegean",                        "north aegean",
+    "GR",                "Decentralized Administration of Thessaly and Central Greece",                "thessaly and central greece",                            "thessaly",
+    "ID",                                                        "South East Sulawesi",                        "south east sulawesi",                  "southeast sulawesi",
+    "KE",                                                             "Muranga County",                                    "muranga",                            "murang'a",
+    "KH",                                                      "Steung Treng Province",                               "steung treng",                         "stung treng",
+    "LB",                                                      "Nabatiyeh Governorate",                                  "nabatiyeh",                            "nabatieh",
+    "MU",                                                     "Rivière Noire District",                              "riviere noire",                       "rivière noire",
+    "MY",                                          "Federal Territory of Kuala Lumpur",          "federal territory of kuala lumpur",                        "kuala lumpur",
+    "MY",                                                   "Labuan Federal Territory",                   "labuan federal territory",                              "labuan",
+    "NE",                                                     "Niamey Urban Community",                               "niamey urban",                              "niamey",
+    "NI",                                    "North Caribbean Coast Autonomous Region",                      "north caribbean coast",                  "costa caribe norte",
+    "NI",                                    "South Caribbean Coast Autonomous Region",                      "south caribbean coast",                    "costa caribe sur",
+    "OM",                                                 "Ad Dakhiliyah
+Governorate",                 "ad dakhiliyah",                       "ad-dakhiliyah",
+    "PK",                                                     "Azad Jammu and Kashmir",                     "azad jammu and kashmir",               "azad jammun o kashmir",
+    "PK",                                         "Federally Administered Tribal Area",              "federally administered tribal", "federally administered tribal areas",
+    "PY",                                                        "Boquerón department",                        "boqueron department",                            "boqueron",
+    "RE",                                                                "Saint-Denis",                                "saint denis",                   "seine saint denis",
+    "RE",                                                                 "Saint-Paul",                                 "saint paul",                                    NA,
+    "RE",                                                               "Saint-Pierre",                               "saint pierre",                                    NA,
+    "TZ",                                                        "Unguja South Region",                               "unguja south",               "unguja sud et central"
+  )
+
+  gmob_subdivisions <- dplyr::left_join(gmob_subdivisions,
+                                        gmob_codefix,
+                                        by = "subregion_1_clean") %>%
+    dplyr::mutate(subregion_1_clean = ifelse(!is.na(subregion_1_match),
+                                             subregion_1_match,
+                                             subregion_1_clean))
+
+  # subregion_codes
+  subdivision_codes <- load_subdivisions() %>%
+    dplyr::mutate(
+      subdivision_name = gsub("^Al ", "", subdivision_name),
+      subdivision_name = gsub("s lan$", "", subdivision_name),
+      subdivision_name = tolower(subdivision_name))
+
+
+
+  gmob_lut <- dplyr::left_join(gmob_subdivisions,
+                               subdivision_codes,
+                               by = c("location_code.x" = "country_code",
+                                      "subregion_1_clean" = "subdivision_name"))
+  #Filter and rename
+  gmob_lut  <- gmob_lut %>%
+    dplyr::select(location_code.x,
+                  sub_region_1.x,
+                  subregion_1_clean) %>%
+    dplyr::rename(location_code = location_code.x,
+                  sub_region_1 = sub_region_1.x) %>%
+    dplyr::group_by(location_code, sub_region_1) %>%
+    dplyr::slice(1L) %>%
+    dplyr::ungroup()
+
+  #make sure here are no dups in the LUT
+  # gmob_lut1 <- gmob_lut %>%
+  #   dplyr::group_by(location_code, sub_region_1) %>%
+  #   dplyr::count() %>%
+  #   dplyr::ungroup() %>%
+  #   dplyr::arrange(desc(n))
+
+  #return
+  gmob_lut
+}
+
