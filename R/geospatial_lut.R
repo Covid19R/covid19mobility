@@ -303,6 +303,8 @@ goog_counties_lut <- function(gmob, counties){
                         counties)
 
   #return
-  gmob_lut
+  gmob_lut %>%
+    dplyr::mutate(sub_region_2 = sub_region_2_old) %>%
+    dplyr::select(-sub_region_2_old)
   }
 

@@ -84,4 +84,29 @@ load_subdivisions <- function(){
   return(iso_31662_subdivisions_extended)
 }
 
+load_fips <- function(){
+  # add county FIPS codes
+  states <- tigris::states(cb = TRUE,
+                           resolution = "20m",
+                           class = "sf") %>%
+    dplyr::select(STATEFP, NAME) %>%
+    dplyr::rename(sub_region_1 = NAME) %>%
+    dplyr::as_tibble() %>%
+    dplyr::select(-geometry)
+
+  counties <- tigris::counties(resolution = "20m",
+                               cb = TRUE,
+                               class = "sf") %>%
+    dplyr::rename(
+      sub_region_2 = NAME,
+      location_code = GEOID) %>%
+    dplyr::as_tibble() %>%
+    dplyr::select(-geometry)
+
+  #add state names and return
+  dplyr::left_join(counties, states) %>%
+    dplyr::select(sub_region_1, sub_region_2, location_code) %>%
+    dplyr::arrange(sub_region_1, sub_region_2, location_code)
+
+}
 
