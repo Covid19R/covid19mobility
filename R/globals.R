@@ -1,7 +1,7 @@
 globalVariables(
   c(
 
-    #columns names I refer to
+    # columns names I refer to
     "date",
     "location",
     "location_type",
@@ -18,7 +18,7 @@ globalVariables(
     "data_types",
     "has_geospatial_info",
 
-    #google
+    # google
     "country_region_code",
     "country_region",
     "sub_region_1",
@@ -31,7 +31,7 @@ globalVariables(
     "residential_percent_change_from_baseline",
 
 
-    #from apple or geospatial sources
+    # from apple or geospatial sources
     "geo_type",
     "transportation_type",
     "ISO_3166_2",
@@ -44,7 +44,7 @@ globalVariables(
     "NAME.EN",
     "old_loc",
 
-    #from google
+    # from google
     "code",
     "subdivision_name",
     "country_code",
@@ -61,5 +61,5 @@ globalVariables(
     ".",
     "sub_region_2_old",
     "subregion_1_match"
-
-))
+  )
+)

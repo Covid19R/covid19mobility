@@ -85,7 +85,7 @@ add_subregion_codes <- function(adf) {
 #' @return tibble
 #'
 add_city_codes <- function(adf) {
- unlocode <- load_un_locode()
+  unlocode <- load_un_locode()
 
   # merge in codes and pivot to covid19R standard and return
   adf <- location_code_merge_pivot(unlocode, adf,
