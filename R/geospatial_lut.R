@@ -44,7 +44,6 @@ ireland_counties <- data.frame(
   )
 )
 
-#stringi::stri_escape_unicode("í")
 
 korea_province <- data.frame(
   stringsAsFactors = FALSE,
@@ -197,14 +196,14 @@ goog_subdivision_lut <- function(gmob){
     fix_subregion_clean
 
   #those last recalcitrant few
-  gmob_codefix <- tibble::tribble(
+  gmob_codefix <- dplyr::tribble(
     ~location_code,                                                                ~sub_region_1,                           ~subregion_1_clean,                    ~subregion_1_match,
     "AE",                                                             "Umm Al Quawain",                             "umm al quawain",                      "umm al qaiwain",
     "CL",                                                                    "Bio Bio",                                    "bio bio",                              "biobio",
     "CL",                                          "Magallanes and Chilean Antarctica",          "magallanes and chilean antarctica",                          "magallanes",
     "CO",                                                            "North Santander",                            "north santander",                  "norte de santander",
-    "CO",                                                 "San Andres and Providencia",                 "san andres and providencia",           "san andrés en providencia",
-    "EC",                                                          "Galápagos Islands",                          "galapagos islands",                           "galapagos",
+    "CO",                                                 "San Andres and Providencia",                 "san andres and providencia",           "san andr\u00E9s en providencia",
+    "EC",                                                          "Gal\u00e1pagos Islands",                          "galapagos islands",                           "galapagos",
     "EG",                                                    "Ash Sharqia Governorate",                                "ash sharqia",                             "sharqia",
     "EG",                                                     "El Beheira Governorate",                                 "el beheira",                             "beheira",
     "EG",                                                        "Menofia Governorate",                                    "menofia",                             "monufia",
@@ -220,17 +219,16 @@ goog_subdivision_lut <- function(gmob){
     "KE",                                                             "Muranga County",                                    "muranga",                            "murang'a",
     "KH",                                                      "Steung Treng Province",                               "steung treng",                         "stung treng",
     "LB",                                                      "Nabatiyeh Governorate",                                  "nabatiyeh",                            "nabatieh",
-    "MU",                                                     "Rivière Noire District",                              "riviere noire",                       "rivière noire",
+    "MU",                                                     "Rivi\u00e8re Noire District",                              "riviere noire",                       "rivi\u00e8re noire",
     "MY",                                          "Federal Territory of Kuala Lumpur",          "federal territory of kuala lumpur",                        "kuala lumpur",
     "MY",                                                   "Labuan Federal Territory",                   "labuan federal territory",                              "labuan",
     "NE",                                                     "Niamey Urban Community",                               "niamey urban",                              "niamey",
     "NI",                                    "North Caribbean Coast Autonomous Region",                      "north caribbean coast",                  "costa caribe norte",
     "NI",                                    "South Caribbean Coast Autonomous Region",                      "south caribbean coast",                    "costa caribe sur",
-    "OM",                                                 "Ad Dakhiliyah
-Governorate",                 "ad dakhiliyah",                       "ad-dakhiliyah",
+    "OM",                                                 "Ad Dakhiliyah Governorate",                 "ad dakhiliyah",                       "ad-dakhiliyah",
     "PK",                                                     "Azad Jammu and Kashmir",                     "azad jammu and kashmir",               "azad jammun o kashmir",
     "PK",                                         "Federally Administered Tribal Area",              "federally administered tribal", "federally administered tribal areas",
-    "PY",                                                        "Boquerón department",                        "boqueron department",                            "boqueron",
+    "PY",                                                        "Boquer\u00f3n department",                        "boqueron department",                            "boqueron",
     "RE",                                                                "Saint-Denis",                                "saint denis",                   "seine saint denis",
     "RE",                                                                 "Saint-Paul",                                 "saint paul",                                    NA,
     "RE",                                                               "Saint-Pierre",                               "saint pierre",                                    NA,
