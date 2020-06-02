@@ -279,3 +279,30 @@ Governorate",                 "ad dakhiliyah",                       "ad-dakhili
   gmob_lut
 }
 
+goog_counties_lut <- function(gmob, counties){
+
+  gmob_unique <- gmob %>%
+    dplyr::select(sub_region_1, sub_region_2) %>%
+    dplyr::group_by(sub_region_1, sub_region_2) %>%
+    dplyr::slice(1L) %>%
+    dplyr::ungroup() %>%
+    dplyr::mutate(
+      sub_region_2_old = sub_region_2,
+      sub_region_2 = gsub(" County", "", sub_region_2),
+      sub_region_2 = gsub(" Parish", "", sub_region_2),
+      sub_region_2 = gsub(" Borough", "", sub_region_2)
+    )
+
+  #fix one spelling error
+  counties <- counties %>%
+    dplyr::mutate(
+      sub_region_2 = ifelse(location_code==22059, "La Salle", sub_region_2))
+
+  #merge
+  gmob_lut <- dplyr::left_join(gmob_unique,
+                        counties)
+
+  #return
+  gmob_lut
+  }
+
