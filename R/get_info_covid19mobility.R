@@ -55,7 +55,7 @@ get_info_covid19mobility <- function(){
     "covid19mobility_google_country",
     "covid19mobility",
     "refresh_covid19mobility_google_country",
-    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3–Feb 6, 2020 for visits to places falling in to certain categories.",
+    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3-Feb 6, 2020 for visits to places falling in to certain categories.",
     "https://www.google.com/covid19/mobility/",
     "https://www.google.com/covid19/mobility/",
     "retail_and_recreation_percent_change_from_baseline,grocery_and_pharmacy_percent_change_from_baseline,parks_percent_change_from_baseline,transit_stations_percent_change_from_baseline,workplaces_percent_change_from_baseline,residential_percent_change_from_baseline", #COMMA SEPARATED STRING OF DATA TYPES
@@ -66,7 +66,7 @@ get_info_covid19mobility <- function(){
     "covid19mobility_google_subregions",
     "covid19mobility",
     "refresh_covid19mobility_google_subregions",
-    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3–Feb 6, 2020 for visits to places falling in to certain categories. Data is aggregated at the state or subdivision level.",
+    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3-Feb 6, 2020 for visits to places falling in to certain categories. Data is aggregated at the state or subdivision level.",
     "https://www.google.com/covid19/mobility/",
     "https://www.google.com/covid19/mobility/",
     "retail_and_recreation_percent_change_from_baseline,grocery_and_pharmacy_percent_change_from_baseline,parks_percent_change_from_baseline,transit_stations_percent_change_from_baseline,workplaces_percent_change_from_baseline,residential_percent_change_from_baseline", #COMMA SEPARATED STRING OF DATA TYPES
@@ -77,7 +77,7 @@ get_info_covid19mobility <- function(){
     "covid19mobility_google_us_counties",
     "covid19mobility",
     "refresh_covid19mobility_google_us_counties",
-    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3–Feb 6, 2020 for visits to places falling in to certain categories. Data is aggregated at the county level for the USA only.",
+    "Changes for each day are compared to a baseline value for that day of the week as compared to  the 5-week period Jan 3-Feb 6, 2020 for visits to places falling in to certain categories. Data is aggregated at the county level for the USA only.",
     "https://www.google.com/covid19/mobility/",
     "https://www.google.com/covid19/mobility/",
     "retail_and_recreation_percent_change_from_baseline,grocery_and_pharmacy_percent_change_from_baseline,parks_percent_change_from_baseline,transit_stations_percent_change_from_baseline,workplaces_percent_change_from_baseline,residential_percent_change_from_baseline", #COMMA SEPARATED STRING OF DATA TYPES

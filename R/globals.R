@@ -42,5 +42,23 @@ globalVariables(
     "alternative_name",
     "region",
     "NAME.EN",
-    "old_loc"
+    "old_loc",
+
+    #from google
+    "code",
+    "subdivision_name",
+    "country_code",
+    "state",
+    "iso_31662_subdivisions_extended",
+    "STATEFP",
+    "NAME",
+    "geometry",
+    "GEOID",
+    "location_code.x",
+    "sub_region_1.x",
+    "subregion_1_clean",
+    "sub_region_1",
+    ".",
+    "sub_region_2_old"
+
 ))
