@@ -17,8 +17,8 @@ Currently, this package imports data from:
   - The [Apple Mobility Trends
     Report](https://www.apple.com/covid19/mobility)
 
-  - The \[Google Covid-19 Mobility Trends\]
-    (<https://www.google.com/covid19/mobility/>)
+  - The [Google Covid-19 Mobility
+    Trends](https://www.google.com/covid19/mobility/)
 
 ## Installation
 

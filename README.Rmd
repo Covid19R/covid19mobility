@@ -23,7 +23,7 @@ The goal of covid19mobility is to make  mobility data from different sources ava
 
 * The [Apple Mobility Trends Report](https://www.apple.com/covid19/mobility)
 
-* The [Google Covid-19 Mobility Trends] (https://www.google.com/covid19/mobility/)
+* The [Google Covid-19 Mobility Trends](https://www.google.com/covid19/mobility/)
 
 
 ## Installation
