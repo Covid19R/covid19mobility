@@ -1,11 +1,50 @@
-#Each Community Mobility Report dataset is presented by location and highlights the percent change in visits to places like grocery stores and parks within a geographic area.
-# Location accuracy and the understanding of categorized places varies from region to region, so we don’t recommend using this data to compare changes between countries, or between regions with different characteristics (e.g. rural versus urban areas).
-#
-# Changes for each day are compared to a baseline value for that day of the week:
-
-# The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.
-# The datasets show trends over several months with the most recent data representing approximately 2-3 days ago—this is how long it takes to produce the datasets.
-
+#' Get Google Mobility Data at the Counry Level
+#'
+#' @description  From Google:
+#' "Each Community Mobility Report dataset is presented by location
+#' and highlights the percent change in visits to places like grocery
+#' stores and parks within a geographic area.
+#'
+#' Location accuracy and the understanding of categorized places
+#' varies from region to region, so we don’t recommend using this
+#' data to compare changes between countries, or between regions
+#' with different characteristics (e.g. rural versus urban areas).
+#'
+#' Changes for each day are compared to a baseline value for that
+#' day of the week: The baseline is the median value, for the corresponding day
+#' of the week, during the 5-week period Jan 3–Feb 6, 2020.
+#' The datasets show trends over several months with the most
+#' recent data representing approximately 2-3 days ago—this is how
+#' long it takes to produce the datasets."
+#'
+#' Data represens changes from baseline visits for the following types
+#' of locations visited:
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
+#' @return A tibble meeting the Covid19R Project data standard. Columns include:
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
+#' @export
+#' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
+#' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
+#'
+#' @examples
+#' \dontrun{
+#' covid19mobility_google_country <- refresh_covid19mobility_google_country()
+#'
+#' head(covid19mobility_google_country)
+#' }
+#'
+#'
 refresh_covid19mobility_google_country <- function(){
 
   #read in
@@ -24,6 +63,54 @@ refresh_covid19mobility_google_country <- function(){
     dplyr::mutate(location_code = ifelse(location=="Namibia", "NA", location_code)) #agh!
 }
 
+
+#' Get Google Mobility Data at the State of Subdivision Level
+#'
+#' @description From Google:
+#' "Each Community Mobility Report dataset is presented by location
+#' and highlights the percent change in visits to places like grocery
+#' stores and parks within a geographic area.
+#'
+#' Location accuracy and the understanding of categorized places
+#' varies from region to region, so we don’t recommend using this
+#' data to compare changes between countries, or between regions
+#' with different characteristics (e.g. rural versus urban areas).
+#'
+#' Changes for each day are compared to a baseline value for that
+#' day of the week: The baseline is the median value, for the corresponding day
+#' of the week, during the 5-week period Jan 3–Feb 6, 2020.
+#' The datasets show trends over several months with the most
+#' recent data representing approximately 2-3 days ago—this is how
+#' long it takes to produce the datasets."
+#'
+#' Data represens changes from baseline visits for the following types
+#' of locations visited:
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
+#' @return A tibble meeting the Covid19R Project data standard. Columns include:
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
+#' @export
+#' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
+#' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
+#'
+#' @examples
+#' \dontrun{
+#' covid19mobility_google_subregions <- refresh_covid19mobility_google_subregions()
+#'
+#' head(covid19mobility_google_subregions)
+#' }
+#'
+#'
 refresh_covid19mobility_google_subregions <- function(){
 
   #read in
@@ -64,9 +151,6 @@ refresh_covid19mobility_google_subregions <- function(){
                                   subdivision_codes,
                                   by = c("location_code" = "country_code",
                                          "subregion_1_clean" = "subdivision_name"))
-  #Add PR FIPS codes
-  # pr <- tigris::counties(state = "PR", class="sf") %>%
-  #   dplyr::select(GEOID, NAME)
 
 
   #return
@@ -88,6 +172,54 @@ refresh_covid19mobility_google_subregions <- function(){
 
 }
 
+
+#' Get Google Mobility Data for US States
+#'
+#' @description From Google:
+#' "Each Community Mobility Report dataset is presented by location
+#' and highlights the percent change in visits to places like grocery
+#' stores and parks within a geographic area.
+#'
+#' Location accuracy and the understanding of categorized places
+#' varies from region to region, so we don’t recommend using this
+#' data to compare changes between countries, or between regions
+#' with different characteristics (e.g. rural versus urban areas).
+#'
+#' Changes for each day are compared to a baseline value for that
+#' day of the week: The baseline is the median value, for the corresponding day
+#' of the week, during the 5-week period Jan 3–Feb 6, 2020.
+#' The datasets show trends over several months with the most
+#' recent data representing approximately 2-3 days ago—this is how
+#' long it takes to produce the datasets."
+#'
+#' Data represens changes from baseline visits for the following types
+#' of locations visited:
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
+#' @return A tibble meeting the Covid19R Project data standard. Columns include:
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
+#' @export
+#' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
+#' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
+#'
+#' @examples
+#' \dontrun{
+#' covid19mobility_google_us_counties <- refresh_covid19mobility_google_us_counties()
+#'
+#' head(covid19mobility_google_us_counties)
+#' }
+#'
+#'
 refresh_covid19mobility_google_us_counties <- function(){
 
   #read in

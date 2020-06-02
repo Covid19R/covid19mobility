@@ -1,5 +1,5 @@
 Package: covid19mobility
-Title: Fetches the Covid-19 Mobility Data from Different Sources
+Title: Fetches data on Covid-19 mobility trends from different sources
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jarrett",
@@ -7,7 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jarrett.byrnes@umb.edu",
            comment = c(ORCID = "0000-0002-9791-9472"))
-Description: What the package does (one paragraph).
+Description: This package is used to scrape trends in mobility from 
+            different sources as related to the outbreak of Covid-19.
+            Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
+            Apple <>, and will add others. The data returned uses the tidy
+            Covid19R project data standard <https://covid19r.github.io/documentation/>
+            as well as the controlled vocabularies for measurement types.
 License: MIT + file LICENSE
 Suggests: 
     testthat,
@@ -24,9 +29,9 @@ Imports:
     tidyr,
     magrittr,
     dplyr,
-    rnaturalearth,
     utils,
-    lubridate
+    lubridate,
+    tigris
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
