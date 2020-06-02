@@ -28,6 +28,7 @@ use_package("rnaturalearth", type = "Suggests")
 use_package("lubridate")
 use_package("utils")
 use_package("tigris")
+use_package("stringi")
 use_pipe()
 use_package("ggplot2", type = "Suggests")
 

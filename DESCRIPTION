@@ -31,7 +31,8 @@ Imports:
     dplyr,
     utils,
     lubridate,
-    tigris
+    tigris,
+    stringi
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr

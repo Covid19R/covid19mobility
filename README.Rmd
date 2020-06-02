@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 The goal of covid19mobility is to make  mobility data from different sources available using the [Covid19R Project Data Format Standard](https://covid19r.github.io/documentation/data-format-standard.html). Currently, this package imports data from:
 \
+
 * The [Apple Mobility Trends Report](https://www.apple.com/covid19/mobility)
 
 * The [Google Covid-19 Mobility Trends] (https://www.google.com/covid19/mobility/)
