@@ -59,6 +59,7 @@ globalVariables(
     "subregion_1_clean",
     "sub_region_1",
     ".",
-    "sub_region_2_old"
+    "sub_region_2_old",
+    "subregion_1_match"
 
 ))
