@@ -44,6 +44,10 @@ use_vignette("plot_us_mobility")
 
 #tests
 use_test("check_country_length")
+use_test("test_get_info")
+use_test("test_controlled_vocab")
+use_test("test_refresh_data_length")
+
 
 #make sure everything is a-ok
 devtools::spell_check()
