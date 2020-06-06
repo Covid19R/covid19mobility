@@ -28,7 +28,7 @@ library(ggplot2)
 apple_cities <- refresh_covid19mobility_apple_city()
 ```
 
-To turn it into something sptial, we'll need to join it with the UN LOCODE classification, filter out missing spatial info, and then transform it, using as our Coordinate Reference System [EPSG 4326](https://spatialreference.org/ref/epsg/wgs-84/).
+To turn it into something spatial, we'll need to join it with the UN LOCODE classification, filter out missing spatial info, and then transform it, using as our Coordinate Reference System [EPSG 4326](https://spatialreference.org/ref/epsg/wgs-84/).
 
 ```{r convert, message=FALSE, warning=FALSE}
 
@@ -85,7 +85,7 @@ apple_cities_spatial_changes <- apple_cities_spatial %>%
   ungroup()
 ```
 
-Let's look at the Feburary to April change first
+Let's look at the Februrary to April change first
 
 ```{r}
 ggplot() +

@@ -1,4 +1,4 @@
-#' Get Google Mobility Data at the Counry Level
+#' Get Google Mobility Data at the Country Level
 #'
 #' @description  From Google:
 #' "Each Community Mobility Report dataset is presented by location
@@ -17,7 +17,7 @@
 #' recent data representing approximately 2-3 days ago—this is how
 #' long it takes to produce the datasets."
 #'
-#' Data represens changes from baseline visits for the following types
+#' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' * retail and recreation
 #' * grocery and pharmacy
@@ -82,7 +82,7 @@ refresh_covid19mobility_google_country <- function() {
 #' recent data representing approximately 2-3 days ago—this is how
 #' long it takes to produce the datasets."
 #'
-#' Data represens changes from baseline visits for the following types
+#' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' * retail and recreation
 #' * grocery and pharmacy
@@ -197,7 +197,7 @@ refresh_covid19mobility_google_subregions <- function() {
 #' recent data representing approximately 2-3 days ago—this is how
 #' long it takes to produce the datasets."
 #'
-#' Data represens changes from baseline visits for the following types
+#' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' * retail and recreation
 #' * grocery and pharmacy

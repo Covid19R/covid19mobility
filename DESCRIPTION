@@ -10,7 +10,7 @@ Authors@R:
 Description: This package is used to scrape trends in mobility from 
             different sources as related to the outbreak of Covid-19.
             Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
-            Apple <>, and will add others. The data returned uses the tidy
+            Apple <https://www.apple.com/covid19/mobility>, and will add others. The data returned uses the tidy
             Covid19R project data standard <https://covid19r.github.io/documentation/>
             as well as the controlled vocabularies for measurement types.
 License: MIT + file LICENSE

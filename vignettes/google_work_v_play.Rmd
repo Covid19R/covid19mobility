@@ -31,7 +31,7 @@ goog %>%
   unique
 ```
 
-Cool - we've got workplace and residential in there. I wonder if folk were spending more time at home and less time at work? The subregions data here is states/kantons/territitories, etc. Google is pretty explicit that interregional comparisons are probably not valid, but, can we look at broad trends, with each region as a data point?
+Cool - we've got workplace and residential in there. I wonder if folk were spending more time at home and less time at work? The subregions data here is states/kantons/territories, etc. Google is pretty explicit that interregional comparisons are probably not valid, but, can we look at broad trends, with each region as a data point?
 
 First, let's just look at, well, everything!
 
