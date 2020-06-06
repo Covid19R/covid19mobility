@@ -40,16 +40,13 @@ expect_contains <- function(vec1, vec2) {
 
 test_one_refresh_for_vocab <- function(arow){
 
-  test_that(glue("{arow$fun} works and has proper
-                 controlled format and vocab"), {
-
   res <- eval(call(arow$fun))
 
   # make sure there's there there
   expect_gt(nrow(res), 0)
 
   # make sure column names are in order
-  expect_named(res, refresh_col_names)
+  expect_named(res[,1:7], refresh_col_names) #allow for other cols
 
   # loc types
   expect_contains(res$location_type, location_types)
@@ -59,13 +56,15 @@ test_one_refresh_for_vocab <- function(arow){
 
   # dat types
   expect_contains(res$data_type, data_types)
-  })
 }
 
 #run all tests
 
 #check the number of rows is greater than it was when the
 #function was added to the package
-for(i in 1:nrow(fun_check)){
-  test_one_refresh_for_vocab(refresh_funs[i,])
+for(i in 1:nrow(refresh_funs)){
+
+  test_that(glue::glue("{refresh_funs[i,]$fun} works and has propercontrolled format and vocab"), {
+    test_one_refresh_for_vocab(refresh_funs[i,])
+    })
 }

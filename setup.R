@@ -25,10 +25,12 @@ use_package("readr")
 use_package("tidyr")
 use_package("dplyr")
 use_package("rnaturalearth", type = "Suggests")
+use_package("sf", type = "Suggests")
 use_package("lubridate")
 use_package("utils")
 use_package("tigris")
 use_package("stringi")
+use_package("glue")
 use_pipe()
 use_package("ggplot2", type = "Suggests")
 
@@ -41,6 +43,8 @@ use_r("lut.R")
 
 #make vignettes
 use_vignette("plot_us_mobility")
+use_vignette("google_work_v_play")
+use_vignette("apple_cities_across_space_and_change")
 
 #tests
 use_test("check_country_length")

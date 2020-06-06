@@ -18,7 +18,9 @@ Suggests:
     testthat,
     knitr,
     rmarkdown,
-    ggplot2
+    ggplot2,
+    rnaturalearth,
+    sf
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -32,7 +34,8 @@ Imports:
     utils,
     lubridate,
     tigris,
-    stringi
+    stringi,
+    glue
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
