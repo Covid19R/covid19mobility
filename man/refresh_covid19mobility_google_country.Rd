@@ -2,7 +2,7 @@
 % Please edit documentation in R/refresh_covid19mobility_google.R
 \name{refresh_covid19mobility_google_country}
 \alias{refresh_covid19mobility_google_country}
-\title{Get Google Mobility Data at the Counry Level}
+\title{Get Google Mobility Data at the Country Level}
 \usage{
 refresh_covid19mobility_google_country()
 }
@@ -36,7 +36,7 @@ The datasets show trends over several months with the most
 recent data representing approximately 2-3 days ago—this is how
 long it takes to produce the datasets."
 
-Data represens changes from baseline visits for the following types
+Data represents changes from baseline visits for the following types
 of locations visited:
 \itemize{
 \item retail and recreation

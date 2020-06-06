@@ -5,14 +5,19 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fetches the Covid-19 Mobility Data from Apple • covid19mobility</title>
+<title>Fetches data on Covid-19 mobility trends from different sources • covid19mobility</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Fetches the Covid-19 Mobility Data from Apple">
-<meta property="og:description" content="What the package does (one paragraph).">
+<script src="pkgdown.js"></script><meta property="og:title" content="Fetches data on Covid-19 mobility trends from different sources">
+<meta property="og:description" content="This package is used to scrape trends in mobility from 
+            different sources as related to the outbreak of Covid-19.
+            Currently, the package scrapes data from Google &lt;https://www.google.com/covid19/mobility/&gt;, 
+            Apple &lt;https://www.apple.com/covid19/mobility&gt;, and will add others. The data returned uses the tidy
+            Covid19R project data standard &lt;https://covid19r.github.io/documentation/&gt;
+            as well as the controlled vocabularies for measurement types.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -54,6 +59,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/apple_cities_across_space_and_change.html">How mobility has changed in cities around the world</a>
+    </li>
+    <li>
+      <a href="articles/google_work_v_play.html">Work versus Rest in the Google Mobility Data</a>
+    </li>
+    <li>
       <a href="articles/plot_us_mobility.html">What are mobility trends like in the US?</a>
     </li>
   </ul>
@@ -76,19 +87,87 @@
 <a href="#covid19mobility" class="anchor"></a>covid19mobility</h1></div>
 <!-- badges: start -->
 
-<p>The goal of covid19mobility is to …</p>
+<p>The goal of covid19mobility is to make mobility data from different sources available using the <a href="https://covid19r.github.io/documentation/data-format-standard.html">Covid19R Project Data Format Standard</a>. Currently, this package imports data from:</p>
+<ul>
+<li><p>The <a href="https://www.apple.com/covid19/mobility">Apple Mobility Trends Report</a></p></li>
+<li><p>The <a href="https://www.google.com/covid19/mobility/">Google Covid-19 Mobility Trends</a></p></li>
+</ul>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of covid19mobility from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"covid19mobility"</span>)</pre></div>
+<!--
+You can install the released version of covid19mobility from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("covid19mobility")
+```
+-->
+<p>You can install the current version of covid19mobility from github with:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"covid19r/covid19mobility"</span>)</pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="data-format" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<a href="#data-format" class="anchor"></a>Data Format</h2>
+<p>The covid19mobility library follows the <a href="https://covid19r.github.io/documentation/data-format-standard.html">Covid19R Project Data Format Standard</a>, with some data sets holding extra data columns. To see what data is available, use <code><a href="reference/get_info_covid19mobility.html">get_info_covid19mobility()</a></code></p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covid19mobility</span>)
-<span class="co">## basic example code</span></pre></div>
+
+<span class="fu"><a href="reference/get_info_covid19mobility.html">get_info_covid19mobility</a></span>() <span class="kw">%&gt;%</span>
+  <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">data_set_name</span>, <span class="no">function_to_get_data</span>, <span class="no">data_details</span>) <span class="kw">%&gt;%</span>
+  <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<table class="table">
+<colgroup>
+<col width="12%">
+<col width="16%">
+<col width="70%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">data_set_name</th>
+<th align="left">function_to_get_data</th>
+<th align="left">data_details</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">covid19mobility_apple_country</td>
+<td align="left">refresh_covid19mobility_apple_country</td>
+<td align="left">Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the country level.</td>
+</tr>
+<tr class="even">
+<td align="left">covid19mobility_apple_subregion</td>
+<td align="left">refresh_covid19mobility_apple_subregion</td>
+<td align="left">Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the subregion (state) level.</td>
+</tr>
+<tr class="odd">
+<td align="left">covid19mobility_apple_city</td>
+<td align="left">refresh_covid19mobility_apple_city</td>
+<td align="left">Data reflects relative volume of directions requests compared to a baseline volume on January 13th, 2020 for multiple transportation modes aggregated at the city level.</td>
+</tr>
+</tbody>
+</table>
+<p>The refresh methods bring in the different data sets. Currently available are: * <code><a href="reference/refresh_covid19mobility_apple_country.html">refresh_covid19mobility_apple_country()</a></code> - <a href="https://www.apple.com/covid19/mobility">Apple Mobility Data</a> at the country level.<br>
+* <code>refresh_covid19mobility_subregion()</code> - <a href="https://www.apple.com/covid19/mobility">Apple Mobility Data</a> at the state/subregion level.<br>
+* <code><a href="reference/refresh_covid19mobility_apple_city.html">refresh_covid19mobility_apple_city()</a></code> - <a href="https://www.apple.com/covid19/mobility">Apple Mobility Data</a> at the city level. Contains some lat/longs for some cities. * <code><a href="reference/refresh_covid19mobility_google_country.html">refresh_covid19mobility_google_country()</a></code> - <a href="https://www.google.com/covid19/mobility/">Google Mobility Data</a> at the country level.<br>
+* <code><a href="reference/refresh_covid19mobility_google_subregions.html">refresh_covid19mobility_google_subregions()</a></code> - <a href="https://www.google.com/covid19/mobility/">Google Mobility Data</a> at the state/subregion level.<br>
+* <code><a href="reference/refresh_covid19mobility_google_us_counties.html">refresh_covid19mobility_google_us_counties()</a></code> - <a href="https://www.google.com/covid19/mobility/">Google Mobility Data</a> at the US county level with FIPS codes.</p>
+<p>For example</p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/refresh_covid19mobility_google_us_counties.html">refresh_covid19mobility_google_us_counties</a></span>() <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>()
+<span class="co">#&gt;   |                                                                              |                                                                      |   0%  |                                                                              |======                                                                |   8%  |                                                                              |============                                                          |  17%  |                                                                              |=============                                                         |  19%  |                                                                              |===================                                                   |  27%  |                                                                              |========================                                              |  34%  |                                                                              |==============================                                        |  42%  |                                                                              |====================================                                  |  51%  |                                                                              |=======================================                               |  55%  |                                                                              |=============================================                         |  64%  |                                                                              |================================================                      |  68%  |                                                                              |======================================================                |  77%  |                                                                              |============================================================          |  85%  |                                                                              |===============================================================       |  89%  |                                                                              |===================================================================== |  98%  |                                                                              |======================================================================| 100%</span>
+<span class="co">#&gt;   |                                                                              |                                                                      |   0%  |                                                                              |=                                                                     |   2%  |                                                                              |===                                                                   |   4%  |                                                                              |====                                                                  |   6%  |                                                                              |=====                                                                 |   7%  |                                                                              |======                                                                |   9%  |                                                                              |========                                                              |  11%  |                                                                              |========                                                              |  12%  |                                                                              |==========                                                            |  14%  |                                                                              |==========                                                            |  15%  |                                                                              |============                                                          |  17%  |                                                                              |=============                                                         |  19%  |                                                                              |==============                                                        |  20%  |                                                                              |===============                                                       |  21%  |                                                                              |================                                                      |  22%  |                                                                              |=================                                                     |  24%  |                                                                              |==================                                                    |  26%  |                                                                              |===================                                                   |  27%  |                                                                              |====================                                                  |  29%  |                                                                              |=====================                                                 |  30%  |                                                                              |======================                                                |  32%  |                                                                              |========================                                              |  34%  |                                                                              |========================                                              |  35%  |                                                                              |==========================                                            |  37%  |                                                                              |==========================                                            |  38%  |                                                                              |============================                                          |  39%  |                                                                              |=============================                                         |  41%  |                                                                              |==============================                                        |  42%  |                                                                              |===============================                                       |  44%  |                                                                              |================================                                      |  45%  |                                                                              |=================================                                     |  47%  |                                                                              |==================================                                    |  49%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================                                  |  52%  |                                                                              |=====================================                                 |  53%  |                                                                              |======================================                                |  54%  |                                                                              |=======================================                               |  56%  |                                                                              |========================================                              |  57%  |                                                                              |=========================================                             |  59%  |                                                                              |==========================================                            |  60%  |                                                                              |===========================================                           |  62%  |                                                                              |=============================================                         |  64%  |                                                                              |=============================================                         |  65%  |                                                                              |===============================================                       |  67%  |                                                                              |===============================================                       |  68%  |                                                                              |=================================================                     |  70%  |                                                                              |==================================================                    |  71%  |                                                                              |===================================================                   |  72%  |                                                                              |====================================================                  |  74%  |                                                                              |=====================================================                 |  75%  |                                                                              |======================================================                |  77%  |                                                                              |=======================================================               |  79%  |                                                                              |========================================================              |  80%  |                                                                              |=========================================================             |  82%  |                                                                              |==========================================================            |  83%  |                                                                              |===========================================================           |  85%  |                                                                              |=============================================================         |  87%  |                                                                              |=============================================================         |  88%  |                                                                              |===============================================================       |  89%  |                                                                              |===============================================================       |  90%  |                                                                              |=================================================================     |  92%  |                                                                              |==================================================================    |  94%  |                                                                              |===================================================================   |  95%  |                                                                              |====================================================================  |  97%  |                                                                              |===================================================================== |  98%  |                                                                              |======================================================================| 100%</span>
+<span class="co">#&gt; # A tibble: 6 x 8</span>
+<span class="co">#&gt;   date       location location_type location_code location_code_t… data_type</span>
+<span class="co">#&gt;   &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;    </span>
+<span class="co">#&gt; 1 2020-02-15 Autauga… county        01001         fips             retail_a…</span>
+<span class="co">#&gt; 2 2020-02-15 Autauga… county        01001         fips             grocery_…</span>
+<span class="co">#&gt; 3 2020-02-15 Autauga… county        01001         fips             parks_pe…</span>
+<span class="co">#&gt; 4 2020-02-15 Autauga… county        01001         fips             transit_…</span>
+<span class="co">#&gt; 5 2020-02-15 Autauga… county        01001         fips             workplac…</span>
+<span class="co">#&gt; 6 2020-02-15 Autauga… county        01001         fips             resident…</span>
+<span class="co">#&gt; # … with 2 more variables: value &lt;int&gt;, state &lt;chr&gt;</span></pre></div>
+</div>
+<div id="data-use-and-licensing" class="section level2">
+<h2 class="hasAnchor">
+<a href="#data-use-and-licensing" class="anchor"></a>Data Use and Licensing</h2>
+<p>Please see the relevant information about each data set and their licenses if you plan on using these data in any published works.</p>
 </div>
 </div>
   </div>
@@ -111,7 +190,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Jarrett Byrnes <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jarrett Byrnes <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9791-9472" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 

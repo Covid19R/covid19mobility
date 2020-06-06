@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • covid19mobility</title>
+<title>Get Google Mobility Data at the State of Subdivision Level — refresh_covid19mobility_google_subregions • covid19mobility</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,31 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Get Google Mobility Data at the State of Subdivision Level — refresh_covid19mobility_google_subregions" />
+<meta property="og:description" content="From Google:
+&quot;Each Community Mobility Report dataset is presented by location
+and highlights the percent change in visits to places like grocery
+stores and parks within a geographic area.
+Location accuracy and the understanding of categorized places
+varies from region to region, so we don’t recommend using this
+data to compare changes between countries, or between regions
+with different characteristics (e.g. rural versus urban areas).
+Changes for each day are compared to a baseline value for that
+day of the week: The baseline is the median value, for the corresponding day
+of the week, during the 5-week period Jan 3–Feb 6, 2020.
+The datasets show trends over several months with the most
+recent data representing approximately 2-3 days ago—this is how
+long it takes to produce the datasets.&quot;
+Data represents changes from baseline visits for the following types
+of locations visited:
+retail and recreation
+grocery and pharmacy
+parks
+transit stations
+workplaces
+residential
+
+" />
 
 
 
@@ -58,7 +82,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -120,22 +144,69 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Get Google Mobility Data at the State of Subdivision Level</h1>
+    
+    <div class="hidden name"><code>refresh_covid19mobility_google_subregions.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
+    <div class="ref-description">
+    <p>From Google:
+"Each Community Mobility Report dataset is presented by location
+and highlights the percent change in visits to places like grocery
+stores and parks within a geographic area.</p>
+<p>Location accuracy and the understanding of categorized places
+varies from region to region, so we don’t recommend using this
+data to compare changes between countries, or between regions
+with different characteristics (e.g. rural versus urban areas).</p>
+<p>Changes for each day are compared to a baseline value for that
+day of the week: The baseline is the median value, for the corresponding day
+of the week, during the 5-week period Jan 3–Feb 6, 2020.
+The datasets show trends over several months with the most
+recent data representing approximately 2-3 days ago—this is how
+long it takes to produce the datasets."</p>
+<p>Data represents changes from baseline visits for the following types
+of locations visited:</p><ul>
+<li><p>retail and recreation</p></li>
+<li><p>grocery and pharmacy</p></li>
+<li><p>parks</p></li>
+<li><p>transit stations</p></li>
+<li><p>workplaces</p></li>
+<li><p>residential</p></li>
+</ul>
 
-      <dl>
-        <dt><a href="apple_cities_across_space_and_change.html">How mobility has changed in cities around the world</a></dt>
-        <dd></dt>
-        <dt><a href="google_work_v_play.html">Work versus Rest in the Google Mobility Data</a></dt>
-        <dd></dt>
-        <dt><a href="plot_us_mobility.html">What are mobility trends like in the US?</a></dt>
-        <dd></dt>
-      </dl>
     </div>
+
+    <pre class="usage"><span class='fu'>refresh_covid19mobility_google_subregions</span>()</pre>
+
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A tibble meeting the Covid19R Project data standard. Columns include:</p><ul>
+<li><p>date - The date in YYYY-MM-DD form</p></li>
+<li><p>location - The name of the location as provided by the data source.</p></li>
+<li><p>location_type - The type of location using the covid19R controlled vocabulary.</p></li>
+<li><p>location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more</p></li>
+<li><p>location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use <code>iso_3166_2</code></p></li>
+<li><p>data_type - the type of data in that given row. See description.</p></li>
+<li><p>value - number of cases of each data type</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Google Covid-19 Mobility Reports <a href='https://www.google.com/covid19/mobility/'>https://www.google.com/covid19/mobility/</a></p>
+<p>The Covid19R Project <a href='https://covid19r.github.io/documentation/'>https://covid19r.github.io/documentation/</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='no'>covid19mobility_google_subregions</span> <span class='kw'>&lt;-</span> <span class='fu'>refresh_covid19mobility_google_subregions</span>()
+
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>covid19mobility_google_subregions</span>)
+}</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

@@ -1,5 +1,5 @@
 ---
-title: "google_work_v_play"
+title: "Work versus Rest in the Google Mobility Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{google_work_v_play}

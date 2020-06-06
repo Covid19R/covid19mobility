@@ -36,7 +36,7 @@ The datasets show trends over several months with the most
 recent data representing approximately 2-3 days ago—this is how
 long it takes to produce the datasets."
 
-Data represens changes from baseline visits for the following types
+Data represents changes from baseline visits for the following types
 of locations visited:
 \itemize{
 \item retail and recreation
