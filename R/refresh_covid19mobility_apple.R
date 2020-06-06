@@ -27,7 +27,8 @@ refresh_covid19mobility_apple_country <- function() {
   # return the apple mobility data
   mob_data %>%
     dplyr::mutate(location_type = "country") %>%
-    reorder_apple()
+    reorder_apple() %>%
+    dplyr::select(-`sub-region`, -country)
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Subregions
@@ -59,7 +60,8 @@ refresh_covid19mobility_apple_subregion <- function() {
   # return the apple mobility data
   mob_data %>%
     dplyr::mutate(location_type = "state") %>%
-    reorder_apple()
+    reorder_apple() %>%
+    dplyr::select(-`sub-region`)
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Cities
