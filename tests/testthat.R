@@ -13,5 +13,3 @@ refresh_funs <- dplyr::tribble(
 )
 
 test_check("covid19mobility")
-
-

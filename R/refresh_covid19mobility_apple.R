@@ -27,7 +27,7 @@ refresh_covid19mobility_apple_country <- function() {
   # return the apple mobility data
   mob_data %>%
     dplyr::mutate(location_type = "country") %>%
-    reorder_apple
+    reorder_apple()
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Subregions
@@ -59,7 +59,7 @@ refresh_covid19mobility_apple_subregion <- function() {
   # return the apple mobility data
   mob_data %>%
     dplyr::mutate(location_type = "state") %>%
-    reorder_apple
+    reorder_apple()
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Cities
@@ -91,7 +91,7 @@ refresh_covid19mobility_apple_city <- function() {
   # return the apple mobility data
   mob_data %>%
     dplyr::mutate(location_type = "city") %>%
-    reorder_apple
+    reorder_apple()
 }
 
 
@@ -140,7 +140,7 @@ reshape_apple_mob_data <- function(mob_data) {
     ) %>%
     dplyr::mutate(location = ifelse(location == "UK", "United Kingdom", location)) %>%
 
-    #make data types in covid19R standard
+    # make data types in covid19R standard
     dplyr::mutate(data_type = dplyr::case_when(
       data_type == "driving" ~ "driving_req_rel_volume",
       data_type == "walking" ~ "walking_req_rel_volume",
@@ -149,10 +149,12 @@ reshape_apple_mob_data <- function(mob_data) {
 }
 
 reorder_apple <- . %>%
-  dplyr::relocate(date,
-                 location,
-                 location_type,
-                 location_code,
-                 location_code_type,
-                 data_type,
-                 value)
+  dplyr::relocate(
+    date,
+    location,
+    location_type,
+    location_code,
+    location_code_type,
+    data_type,
+    value
+  )

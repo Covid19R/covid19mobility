@@ -58,7 +58,7 @@ refresh_covid19mobility_google_country <- function() {
       location_code_type = "iso_3166_2",
       location_type = "country"
     ) %>%
-    covid_19_r_format %>%
+    covid_19_r_format() %>%
     dplyr::mutate(location_code = ifelse(location == "Namibia", "NA", location_code)) # agh!
 }
 
@@ -174,8 +174,7 @@ refresh_covid19mobility_google_subregions <- function() {
       location_code_type = "iso_3166_2"
     )
 
-  gmob_joined %>%  covid_19_r_format
-
+  gmob_joined %>% covid_19_r_format()
 }
 
 
@@ -274,8 +273,7 @@ refresh_covid19mobility_google_us_counties <- function() {
       location_type = "county",
       location_code_type = "fips_code"
     ) %>%
-    covid_19_r_format
-
+    covid_19_r_format()
 }
 
 read_google_mobility <- function() {
@@ -319,6 +317,7 @@ covid_19_r_format <- . %>%
     data_type,
     value
   ) %>%
-  dplyr::mutate(data_type = gsub("_from_baseline", "", data_type),
-                data_type = gsub("_percent_change", "_perc_ch", data_type)
+  dplyr::mutate(
+    data_type = gsub("_from_baseline", "", data_type),
+    data_type = gsub("_percent_change", "_perc_ch", data_type)
   )
