@@ -25,7 +25,9 @@ refresh_covid19mobility_apple_country <- function() {
     add_country_codes()
 
   # return the apple mobility data
-  mob_data %>% dplyr::mutate(location_type = "country")
+  mob_data %>%
+    dplyr::mutate(location_type = "country") %>%
+    reorder_apple
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Subregions
@@ -55,7 +57,9 @@ refresh_covid19mobility_apple_subregion <- function() {
     add_subregion_codes()
 
   # return the apple mobility data
-  mob_data %>% dplyr::mutate(location_type = "state")
+  mob_data %>%
+    dplyr::mutate(location_type = "state") %>%
+    reorder_apple
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Cities
@@ -85,7 +89,9 @@ refresh_covid19mobility_apple_city <- function() {
     add_city_codes()
 
   # return the apple mobility data
-  mob_data %>% dplyr::mutate(location_type = "city")
+  mob_data %>%
+    dplyr::mutate(location_type = "city") %>%
+    reorder_apple
 }
 
 
@@ -125,12 +131,28 @@ reshape_apple_mob_data <- function(mob_data) {
       names_to = "date",
       values_to = "value"
     ) %>%
-    dplyr::mutate(date = lubridate::parse_date_time(date, orders = "ymd")) %>%
+    dplyr::mutate(date = lubridate::ymd(date)) %>%
 
     # rename to covid19R standard
     dplyr::rename(
       location = region, location_type = geo_type,
       data_type = transportation_type
     ) %>%
-    dplyr::mutate(location = ifelse(location == "UK", "United Kingdom", location))
+    dplyr::mutate(location = ifelse(location == "UK", "United Kingdom", location)) %>%
+
+    #make data types in covid19R standard
+    dplyr::mutate(data_type = dplyr::case_when(
+      data_type == "driving" ~ "driving_req_rel_volume",
+      data_type == "walking" ~ "walking_req_rel_volume",
+      data_type == "transit" ~ "transit_req_rel_volume"
+    ))
 }
+
+reorder_apple <- . %>%
+  dplyr::relocate(date,
+                 location,
+                 location_type,
+                 location_code,
+                 location_code_type,
+                 data_type,
+                 value)

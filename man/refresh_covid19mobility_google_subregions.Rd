@@ -54,7 +54,6 @@ covid19mobility_google_subregions <- refresh_covid19mobility_google_subregions()
 head(covid19mobility_google_subregions)
 }
 
-
 }
 \references{
 Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}

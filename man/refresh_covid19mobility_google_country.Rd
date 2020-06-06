@@ -54,7 +54,6 @@ covid19mobility_google_country <- refresh_covid19mobility_google_country()
 head(covid19mobility_google_country)
 }
 
-
 }
 \references{
 Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}

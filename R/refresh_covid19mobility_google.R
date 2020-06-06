@@ -58,11 +58,7 @@ refresh_covid19mobility_google_country <- function() {
       location_code_type = "iso_3166_2",
       location_type = "country"
     ) %>%
-    dplyr::select(
-      date, location, location_type,
-      location_code, location_code_type,
-      data_type, value
-    ) %>%
+    covid_19_r_format %>%
     dplyr::mutate(location_code = ifelse(location == "Namibia", "NA", location_code)) # agh!
 }
 
@@ -176,18 +172,10 @@ refresh_covid19mobility_google_subregions <- function() {
     dplyr::mutate(
       location_type = "state",
       location_code_type = "iso_3166_2"
-    ) %>%
-    dplyr::select(
-      date,
-      location,
-      location_type,
-      location_code,
-      location_code_type,
-      data_type,
-      value
     )
 
-  gmob_joined
+  gmob_joined %>%  covid_19_r_format
+
 }
 
 
@@ -284,14 +272,10 @@ refresh_covid19mobility_google_us_counties <- function() {
     ) %>%
     dplyr::mutate(
       location_type = "county",
-      location_code_type = "fips"
+      location_code_type = "fips_code"
     ) %>%
-    dplyr::select(
-      date, location, location_type,
-      location_code, location_code_type,
-      data_type, value,
-      state
-    )
+    covid_19_r_format
+
 }
 
 read_google_mobility <- function() {
@@ -324,3 +308,17 @@ read_google_mobility <- function() {
 
   gmob_longer
 }
+
+covid_19_r_format <- . %>%
+  dplyr::select(
+    date,
+    location,
+    location_type,
+    location_code,
+    location_code_type,
+    data_type,
+    value
+  ) %>%
+  dplyr::mutate(data_type = gsub("_from_baseline", "", data_type),
+                data_type = gsub("_percent_change", "_perc_ch", data_type)
+  )

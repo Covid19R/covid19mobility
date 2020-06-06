@@ -54,7 +54,6 @@ covid19mobility_google_us_counties <- refresh_covid19mobility_google_us_counties
 head(covid19mobility_google_us_counties)
 }
 
-
 }
 \references{
 Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
