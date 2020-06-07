@@ -1,6 +1,6 @@
 Package: covid19mobility
 Title: Fetches data on Covid-19 mobility trends from different sources
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Jarrett",
            family = "Byrnes",
