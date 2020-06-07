@@ -43,6 +43,9 @@ globalVariables(
     "region",
     "NAME.EN",
     "old_loc",
+    "country",
+    "sub-region",
+
 
     # from google
     "code",
