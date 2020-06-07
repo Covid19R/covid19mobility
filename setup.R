@@ -78,7 +78,7 @@ use_git(message = "Initial Commit")
 
 # for release - checks!
 devtools::spell_check()
-devtools::check_rhub()
+devtools::check_rhub(env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always"))
 devtools::check_win_release()
 devtools::release_checks()
 
