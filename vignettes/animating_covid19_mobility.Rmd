@@ -57,7 +57,7 @@ apple_us <- refresh_covid19mobility_apple_subregion() %>%
 
 ```
 
-The next thing we are going to do is we're going to call shape files for the US states and counties. We get this from the [urbnmapr](https://github.com/UrbanInstitute/urbnmapr) package. We need to also call the [sf package](https://cran.r-project.org/web/packages/sf/index.html) because we are working with shapefiles.
+The next thing we are going to do is we're going to call shape files for the US states and counties. We get this from the [urbnmapr](https://github.com/UrbanInstitute/urbnmapr) package. We need to also call the [sf package](https://CRAN.R-project.org/package=sf) because we are working with shapefiles.
 
 ```{r, eval=FALSE}
 states_sf <- urbnmapr::get_urbn_map("states", sf=TRUE) %>%
