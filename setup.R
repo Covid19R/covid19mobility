@@ -78,8 +78,8 @@ use_git(message = "Initial Commit")
 
 # for release - checks!
 devtools::spell_check()
-devtools::check_win_release()
 devtools::check_rhub()
+devtools::check_win_release()
 devtools::release_checks()
 
 #devtools::release()

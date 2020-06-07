@@ -1,5 +1,5 @@
 Package: covid19mobility
-Title: Fetches data on Covid-19 mobility trends from different sources
+Title: Fetches Data on Covid-19 Mobility Trends from Different Sources
 Version: 0.1.0
 Authors@R: 
     person(given = "Jarrett",
@@ -7,9 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jarrett.byrnes@umb.edu",
            comment = c(ORCID = "0000-0002-9791-9472"))
-Description: This package is used to scrape trends in mobility from 
-            different sources as related to the outbreak of Covid-19.
-            Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
+Description: Srapes trends in mobility after the Covid-19 outbreak from 
+            different sources. Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
             Apple <https://www.apple.com/covid19/mobility>, and will add others. The data returned uses the tidy
             Covid19R project data standard <https://covid19r.github.io/documentation/>
             as well as the controlled vocabularies for measurement types.
