@@ -45,6 +45,7 @@ use_r("lut.R")
 use_vignette("plot_us_mobility")
 use_vignette("google_work_v_play")
 use_vignette("apple_cities_across_space_and_change")
+use_vignette("animating_covid19_mobility")
 
 #tests
 use_test("check_country_length")

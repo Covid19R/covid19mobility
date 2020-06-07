@@ -54,12 +54,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/animating_covid19_mobility.html">Animating Covid-19 Mobility Data</a>
+    </li>
+    <li>
+      <a href="../articles/apple_cities_across_space_and_change.html">How mobility has changed in cities around the world</a>
+    </li>
+    <li>
+      <a href="../articles/google_work_v_play.html">Work versus Home in the Google Mobility Data</a>
+    </li>
+    <li>
       <a href="../articles/plot_us_mobility.html">What are mobility trends like in the US?</a>
     </li>
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/Covid19R/covid19mobility/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -75,7 +91,7 @@
       <h1 data-toc-skip>What are mobility trends like in the US?</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/Covid19R/covid19mobility/blob/master/vignettes/plot_us_mobility.Rmd"><code>vignettes/plot_us_mobility.Rmd</code></a></small>
       <div class="hidden name"><code>plot_us_mobility.Rmd</code></div>
 
     </div>
@@ -86,16 +102,20 @@
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">covid19mobility</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
 
-<span class="no">us_mobile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/refresh_covid19mobility_country.html">refresh_covid19mobility_country</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">location_code</span> <span class="kw">==</span> <span class="st">"USA"</span>)</pre></body></html></div>
+<span class="no">us_mobile</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/refresh_covid19mobility_apple_country.html">refresh_covid19mobility_apple_country</a></span>() <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">location_code</span> <span class="kw">==</span> <span class="st">"US"</span>)</pre></body></html></div>
 <p>Now, let’s plot it!</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">us_mobile</span>,
        <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">value</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">data_type</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">1.1</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>(<span class="kw">base_size</span><span class="kw">=</span><span class="fl">12</span>)</pre></body></html></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">1</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>(<span class="kw">base_size</span><span class="kw">=</span><span class="fl">14</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">color</span> <span class="kw">=</span> <span class="st">"Mobility Type"</span>,
+       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Relative Value"</span>,
+       <span class="kw">x</span> <span class="kw">=</span> <span class="st">""</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Apple Mobility Trends"</span>)</pre></body></html></div>
 <p><img src="plot_us_mobility_files/figure-html/plot_us_mobility-1.png" width="700"></p>
   </div>
 
