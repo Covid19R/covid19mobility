@@ -2,7 +2,7 @@
 title: "What are mobility trends like in the US?"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{plot_us_mobility}
+  %\VignetteIndexEntry{What are mobility trends like in the US?}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 Let's load the data, and filter down to the United States of America.

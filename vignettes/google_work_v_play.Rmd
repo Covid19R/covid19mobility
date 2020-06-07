@@ -1,9 +1,9 @@
 ---
-title: "Work versus Rest in the Google Mobility Data"
+title: "Work versus Home in the Google Mobility Data"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{google_work_v_play}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Work versus Home in the Google Mobility Data}
+  %\VignetteEngine{rmarkdown::render}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 Google's data set is fascinating because it supplies information about a variety of different locations. The data is presented as percent change from a baseline of the average of a five week period from Jan 3 - Feb 6 2020.
@@ -37,8 +38,8 @@ First, let's just look at, well, everything!
 
 ```{r weird_ts_plot, message=FALSE, warning=FALSE}
 goog_wp <- goog %>%
-  filter(data_type %in% c("workplaces_percent_change_from_baseline",
-                          "residential_percent_change_from_baseline"))
+  filter(data_type %in% c("workplaces_perc_ch",
+                          "residential_perc_ch"))
 
 ggplot(goog_wp,
        aes(x = date, y = value,
@@ -61,8 +62,8 @@ goog_wp_wide <- pivot_wider(goog_wp,
                             names_from = data_type,
                             values_from = value)
 ggplot(goog_wp_wide,
-       aes(x = workplaces_percent_change_from_baseline, 
-           y = residential_percent_change_from_baseline,
+       aes(x = workplaces_perc_ch, 
+           y = residential_perc_ch,
            color = as.numeric(date))) +
   geom_point(alpha = 0.2) +
   scale_color_viridis_c("Date",

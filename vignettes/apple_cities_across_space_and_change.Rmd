@@ -2,7 +2,7 @@
 title: "How mobility has changed in cities around the world"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{apple_cities_across_space_and_change}
+  %\VignetteIndexEntry{How mobility has changed in cities around the world}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
