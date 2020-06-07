@@ -57,6 +57,7 @@ use_test("test_refresh_data_length")
 #make sure everything is a-ok
 devtools::spell_check()
 styler::style_pkg()
+goodpractice::gp()
 
 #remake the website
 pkgdown::build_site()
@@ -68,9 +69,15 @@ devtools::install(build_vignettes = TRUE)
 use_git(message = "Initial Commit")
 
 
-#Final checks for release
-#devtools::check_rhub()
-#devtools::check_win_release()
+#-------------
+# Release ####
+#-------------
+
+
+# for release - checks!
+devtools::check_win_release()
 devtools::release_checks()
+devtools::spell_check()
+devtools::check_rhub()
 
 #devtools::release()

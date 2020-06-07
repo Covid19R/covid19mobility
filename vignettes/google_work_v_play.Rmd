@@ -3,7 +3,7 @@ title: "Work versus Home in the Google Mobility Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Work versus Home in the Google Mobility Data}
-  %\VignetteEngine{rmarkdown::render}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
