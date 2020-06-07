@@ -20,7 +20,8 @@ Suggests:
     rmarkdown,
     ggplot2,
     rnaturalearth,
-    sf
+    sf,
+    gganimate
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

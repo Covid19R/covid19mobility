@@ -25,6 +25,7 @@ use_package("readr")
 use_package("tidyr")
 use_package("dplyr")
 use_package("rnaturalearth", type = "Suggests")
+use_package("gganimate", type = "Suggests")
 use_package("sf", type = "Suggests")
 use_package("lubridate")
 use_package("utils")
@@ -75,9 +76,9 @@ use_git(message = "Initial Commit")
 
 
 # for release - checks!
-devtools::check_win_release()
-devtools::release_checks()
 devtools::spell_check()
+devtools::check_win_release()
 devtools::check_rhub()
+devtools::release_checks()
 
 #devtools::release()
