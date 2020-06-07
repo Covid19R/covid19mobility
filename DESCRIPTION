@@ -21,7 +21,8 @@ Suggests:
     ggplot2,
     rnaturalearth,
     sf,
-    gganimate
+    gganimate,
+    rgeos
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
