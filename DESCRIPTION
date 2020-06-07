@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jarrett.byrnes@umb.edu",
            comment = c(ORCID = "0000-0002-9791-9472"))
-Description: Srapes trends in mobility after the Covid-19 outbreak from 
+Description: Scrapes trends in mobility after the Covid-19 outbreak from 
             different sources. Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
             Apple <https://www.apple.com/covid19/mobility>, and will add others. The data returned uses the tidy
             Covid19R project data standard <https://covid19r.github.io/documentation/>
