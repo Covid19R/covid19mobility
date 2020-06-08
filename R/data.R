@@ -12,7 +12,7 @@
 #' * value - number of cases of each data type
 #' * alternative_name - the alternative name for the country
 #' }
-#' @source \url{http://www.diamondse.info/}
+#' @source \url{https://www.apple.com/covid19/mobility}
 "covid19mobility_apple_country_demo"
 
 
@@ -29,5 +29,5 @@
 #' * data_type - the type of data in that given row. Includes `total_cases` and `total_deaths`, cumulative measures of both.
 #' * value - number of cases of each data type
 #' }
-#' @source \url{http://www.diamondse.info/}
+#' @source \url{https://www.google.com/covid19/mobility/}
 "covid19mobility_google_country_demo"

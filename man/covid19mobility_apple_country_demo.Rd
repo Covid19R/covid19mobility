@@ -20,7 +20,7 @@ A data frame with 22032 rows and 8 variables:
 }
 }
 \source{
-\url{http://www.diamondse.info/}
+\url{https://www.apple.com/covid19/mobility}
 }
 \usage{
 covid19mobility_apple_country_demo
