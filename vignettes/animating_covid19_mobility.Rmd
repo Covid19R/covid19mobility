@@ -66,16 +66,17 @@ states_sf <- urbnmapr::get_urbn_map("states", sf=TRUE) %>%
 
 ```{r, include = FALSE}
 #dealing with urbanmapr not on cran
-urbn_url <- "https://github.com/UrbanInstitute/urbnmapr/blob/master/R/sysdata.rda?raw=true"
+urbn_url <- "https://github.com/UrbanInstitute/urbnmapr/raw/master/R/sysdata.rda"
 f <- tempfile()
 utils::download.file(urbn_url, f, quiet = TRUE)
 load(f) # loads unlocode
 unlink(f)
-rm(states) 
+rm(ccdf) 
 rm(territories) 
+rm(territories_sf) 
 rm(territories_counties_sf) 
 rm(territories_counties) 
-rm(states) 
+rm(statedata) 
 ```
 
 Here, we want to `left_join()` our shapefile tibble and our mobility tibble together so that we can graph them all together. Sometimes ggplot will throw an error because when you join the tibbles, you lose the identification that we do have shapefiles in our data set (see [this github post](https://github.com/tidyverse/ggplot2/issues/3391). So you always want to use `st_as_sf()` to save the day!)
