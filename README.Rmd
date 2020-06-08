@@ -63,7 +63,7 @@ The refresh methods bring in the different data sets. Currently available are:
 
 For example
 
-```{r county}
+```{r county, message=FALSE, warning=FALSE}
 refresh_covid19mobility_google_us_counties() %>%
   head()
 ```
