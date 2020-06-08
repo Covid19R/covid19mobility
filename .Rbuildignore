@@ -9,3 +9,4 @@ scratch.R
 ^CODE_OF_CONDUCT\.md$
 ^data-raw$
 docs
+^\.travis\.yml$

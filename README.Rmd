@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN status](https://www.r-pkg.org/badges/version/covid19mobility)](https://CRAN.R-project.org/package=covid19mobility)
+[![Travis build status](https://travis-ci.com/Covid19R/covid19mobility.svg?branch=master)](https://travis-ci.com/Covid19R/covid19mobility)
 <!-- badges: end -->
 
 The goal of covid19mobility is to make  mobility data from different sources available using the [Covid19R Project Data Format Standard](https://covid19r.github.io/documentation/data-format-standard.html). Currently, this package imports data from:
