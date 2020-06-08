@@ -7,8 +7,8 @@
 \format{
 A data frame with 83160 rows and 7 variables:
 \describe{
-#' * date - The date in YYYY-MM-DD form
 \itemize{
+\item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source. The counties dataset provides county and state. They are combined and separated by a \verb{,}, and can be split by \code{tidyr::separate()}, if you wish.
 \item location_type - The type of location using the covid19R controlled vocabulary.
 \item location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
