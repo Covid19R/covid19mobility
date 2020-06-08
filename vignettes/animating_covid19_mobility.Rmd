@@ -20,7 +20,7 @@ Hello everyone! This vignette shows how to plot social distancing data on a map 
 
 The packages used to perform the analyses are below, in the approximate order they were used, and what they were used for.
 
-```{r, message=FALSE, warning=FALSE,echo=FALSE,eval=FALSE}
+```{r, message=FALSE, warning=FALSE,echo=TRUE,eval=FALSE}
 library(covid19mobility) #to get data on mobility from Apple/Google
 library(dplyr) # for joining, piping data frames
 library(lubridate) # for dealing with our date data
