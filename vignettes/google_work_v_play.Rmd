@@ -39,7 +39,8 @@ First, let's just look at, well, everything!
 ```{r weird_ts_plot, message=FALSE, warning=FALSE}
 goog_wp <- goog %>%
   filter(data_type %in% c("workplaces_perc_ch",
-                          "residential_perc_ch"))
+                          "residential_perc_ch")) %>%
+  filter(!is.na(value))
 
 ggplot(goog_wp,
        aes(x = date, y = value,
