@@ -6,7 +6,6 @@
 \title{Demo Data of the Apple Covid-19 Mobility Data for Countries}
 \format{
 A data frame with 22032 rows and 8 variables:
-\describe{
 \itemize{
 \item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source. The counties dataset provides county and state. They are combined and separated by a \verb{,}, and can be split by \code{tidyr::separate()}, if you wish.
@@ -16,7 +15,6 @@ A data frame with 22032 rows and 8 variables:
 \item data_type - the type of data in that given row. Includes \code{total_cases} and \code{total_deaths}, cumulative measures of both.
 \item value - number of cases of each data type
 \item alternative_name - the alternative name for the country
-}
 }
 }
 \source{
