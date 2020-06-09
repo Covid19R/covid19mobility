@@ -61,7 +61,7 @@ test_one_refresh_for_vocab <- function(arow) {
 
 # check the number of rows is greater than it was when the
 # function was added to the package
-for (i in 1:nrow(refresh_funs)) {
+for (i in seq_len(nrow(refresh_funs))) {
   test_that(glue::glue("{refresh_funs[i,]$fun} works and has propercontrolled format and vocab"), {
     test_one_refresh_for_vocab(refresh_funs[i, ])
   })

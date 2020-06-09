@@ -13,6 +13,6 @@ check_len <- function(arow) {
 
 # check the number of rows is greater than it was when the
 # function was added to the package
-for (i in 1:nrow(refresh_funs)) {
+for (i in seq_len(nrow(refresh_funs))) {
   check_len(refresh_funs[i, ])
 }
