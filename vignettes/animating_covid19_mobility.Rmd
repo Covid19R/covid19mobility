@@ -91,7 +91,7 @@ total_apple_us <- as.data.frame(total_apple_us) %>%
 
 Now, we are going to set up our ggplot graph. First, we need to check and make sure that the state shapefile data is good, so we graph it below.
 
-```{r, out.width="100%"}
+```{r map, out.width="100%"}
 ggplot() +
   geom_sf(data=states_sf)
 
@@ -99,7 +99,7 @@ ggplot() +
 
 Finally, we can construct the graph. There are a lot of moving parts here, so I've commented each line to indicate what it does.
 
-```{r anim, out.width="100%", warning=FALSE,eval=FALSE}
+```{r anim, out.width="100%", warning=FALSE, eval=FALSE}
 ggplot() + #call ggplot
   geom_sf(data=states_sf) + # map the shape files to the map of the USA
   geom_sf(data= total_apple_us, aes(fill=value)) + # fill with our data frame and value, which is mobility score
@@ -111,7 +111,7 @@ ggplot() + #call ggplot
   transition_manual(date) #animate by day - this is a gganimate function!
 ```
 
-```{r, eval=FALSE, echo = FALSE}
+```{r, eval = FALSE, echo = FALSE}
 anim_save("./data-raw/covid_mobility_change.gif")
 ```
 
