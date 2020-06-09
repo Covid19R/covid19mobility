@@ -2,7 +2,7 @@
 #'
 #'
 #' @format A data frame with 22032 rows and 8 variables:
-#' \begin{itemize}
+#'
 #' * date - The date in YYYY-MM-DD form
 #' * location - The name of the location as provided by the data source.
 #' The counties dataset provides county and state. They are combined and
@@ -18,7 +18,7 @@
 #' `total_cases` and `total_deaths`, cumulative measures of both.
 #' * value - number of cases of each data type
 #' * alternative_name - the alternative name for the country
-#' \end{itemize}
+#'
 #' @source \url{https://www.apple.com/covid19/mobility}
 "covid19mobility_apple_country_demo"
 
@@ -27,7 +27,7 @@
 #'
 #'
 #' @format A data frame with 83160 rows and 7 variables:
-#' \begin{itemize}
+#'
 #' * date - The date in YYYY-MM-DD form
 #' * location - The name of the location as provided by the data source.
 #' The counties dataset provides county and state. They are combined and
@@ -42,6 +42,6 @@
 #' * data_type - the type of data in that given row.
 #' Includes `total_cases` and `total_deaths`, cumulative measures of both.
 #' * value - number of cases of each data type
-#' \end{itemize}
+#'
 #' @source \url{https://www.google.com/covid19/mobility/}
 "covid19mobility_google_country_demo"

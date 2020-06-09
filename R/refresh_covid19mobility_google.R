@@ -19,16 +19,16 @@
 #'
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
-#' \begin{itemize}
+#'
 #' * retail and recreation
 #' * grocery and pharmacy
 #' * parks
 #' * transit stations
 #' * workplaces
 #' * residential
-#' \end{itemize}
+#'
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
-#' \begin{itemize}
+#'
 #' * date - The date in YYYY-MM-DD form
 #' * location - The name of the location as provided by the data source.
 #' * location_type - The type of location using the covid19R controlled vocabulary.
@@ -36,7 +36,7 @@
 #' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
 #' * data_type - the type of data in that given row. See description.
 #' * value - number of cases of each data type
-#' \end{itemize}
+#'
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
@@ -88,16 +88,16 @@ refresh_covid19mobility_google_country <- function() {
 #'
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
-#' \begin{itemize}
+#'
 #' * retail and recreation
 #' * grocery and pharmacy
 #' * parks
 #' * transit stations
 #' * workplaces
 #' * residential
-#' \end{itemize}
+#'
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
-#' \begin{itemize}
+#'
 #' * date - The date in YYYY-MM-DD form
 #' * location - The name of the location as provided by the data source.
 #' * location_type - The type of location using the covid19R controlled vocabulary.
@@ -105,7 +105,7 @@ refresh_covid19mobility_google_country <- function() {
 #' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
 #' * data_type - the type of data in that given row. See description.
 #' * value - number of cases of each data type
-#' \end{itemize}
+#'
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
@@ -207,16 +207,16 @@ refresh_covid19mobility_google_subregions <- function() {
 #'
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
-#' \begin{itemize}
+#'
 #' * retail and recreation
 #' * grocery and pharmacy
 #' * parks
 #' * transit stations
 #' * workplaces
 #' * residential
-#' \end{itemize}
+#'
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
-#' \begin{itemize}
+#'
 #' * date - The date in YYYY-MM-DD form
 #' * location - The name of the location as provided by the data source.
 #' * location_type - The type of location using the covid19R controlled vocabulary.
@@ -224,7 +224,7 @@ refresh_covid19mobility_google_subregions <- function() {
 #' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
 #' * data_type - the type of data in that given row. See description.
 #' * value - number of cases of each data type
-#' \end{itemize}
+#'
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}

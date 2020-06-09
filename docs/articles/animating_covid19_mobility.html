@@ -139,7 +139,7 @@
 <p>Now, we are going to set up our ggplot graph. First, we need to check and make sure that the state shapefile data is good, so we graph it below.</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu">ggplot</span>() +
   <span class="fu">geom_sf</span>(<span class="kw">data</span><span class="kw">=</span><span class="no">states_sf</span>)</pre></body></html></div>
-<p><img src="animating_covid19_mobility_files/figure-html/unnamed-chunk-9-1.png" width="100%"></p>
+<p><img src="animating_covid19_mobility_files/figure-html/map-1.png" width="100%"></p>
 <p>Finally, we can construct the graph. There are a lot of moving parts here, so I’ve commented each line to indicate what it does.</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu">ggplot</span>() + <span class="co">#call ggplot</span>
   <span class="fu">geom_sf</span>(<span class="kw">data</span><span class="kw">=</span><span class="no">states_sf</span>) + <span class="co"># map the shape files to the map of the USA</span>
