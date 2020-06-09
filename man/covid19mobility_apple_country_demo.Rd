@@ -6,7 +6,6 @@
 \title{Demo Data of the Apple Covid-19 Mobility Data for Countries}
 \format{
 A data frame with 22032 rows and 8 variables:
-\begin{itemize}
 \itemize{
 \item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source.
@@ -23,7 +22,6 @@ use \code{ios_3166_2}
 \code{total_cases} and \code{total_deaths}, cumulative measures of both.
 \item value - number of cases of each data type
 \item alternative_name - the alternative name for the country
-\end{itemize}
 }
 }
 \source{
