@@ -20,22 +20,22 @@
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' \begin{itemize}
-#' \item retail and recreation
-#' \item grocery and pharmacy
-#' \item parks
-#' \item transit stations
-#' \item workplaces
-#' \item residential
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
 #' \end{itemize}
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
 #' \begin{itemize}
-#' \item date - The date in YYYY-MM-DD form
-#' \item location - The name of the location as provided by the data source.
-#' \item location_type - The type of location using the covid19R controlled vocabulary.
-#' \item location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
-#' \item location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
-#' \item data_type - the type of data in that given row. See description.
-#' \item value - number of cases of each data type
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
 #' \end{itemize}
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
@@ -89,22 +89,22 @@ refresh_covid19mobility_google_country <- function() {
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' \begin{itemize}
-#' \item retail and recreation
-#' \item grocery and pharmacy
-#' \item parks
-#' \item transit stations
-#' \item workplaces
-#' \item residential
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
 #' \end{itemize}
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
 #' \begin{itemize}
-#' \item date - The date in YYYY-MM-DD form
-#' \item location - The name of the location as provided by the data source.
-#' \item location_type - The type of location using the covid19R controlled vocabulary.
-#' \item location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
-#' \item location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
-#' \item data_type - the type of data in that given row. See description.
-#' \item value - number of cases of each data type
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
 #' \end{itemize}
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}
@@ -208,22 +208,22 @@ refresh_covid19mobility_google_subregions <- function() {
 #' Data represents changes from baseline visits for the following types
 #' of locations visited:
 #' \begin{itemize}
-#' \item retail and recreation
-#' \item grocery and pharmacy
-#' \item parks
-#' \item transit stations
-#' \item workplaces
-#' \item residential
+#' * retail and recreation
+#' * grocery and pharmacy
+#' * parks
+#' * transit stations
+#' * workplaces
+#' * residential
 #' \end{itemize}
 #' @return A tibble meeting the Covid19R Project data standard. Columns include:
 #' \begin{itemize}
-#' \item date - The date in YYYY-MM-DD form
-#' \item location - The name of the location as provided by the data source.
-#' \item location_type - The type of location using the covid19R controlled vocabulary.
-#' \item location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
-#' \item location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
-#' \item data_type - the type of data in that given row. See description.
-#' \item value - number of cases of each data type
+#' * date - The date in YYYY-MM-DD form
+#' * location - The name of the location as provided by the data source.
+#' * location_type - The type of location using the covid19R controlled vocabulary.
+#' * location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
+#' * location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use `iso_3166_2`
+#' * data_type - the type of data in that given row. See description.
+#' * value - number of cases of each data type
 #' \end{itemize}
 #' @export
 #' @references Google Covid-19 Mobility Reports \url{https://www.google.com/covid19/mobility/}

@@ -7,6 +7,7 @@
 \format{
 A data frame with 22032 rows and 8 variables:
 \begin{itemize}
+\itemize{
 \item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source.
 The counties dataset provides county and state. They are combined and
@@ -23,6 +24,7 @@ use \code{ios_3166_2}
 \item value - number of cases of each data type
 \item alternative_name - the alternative name for the country
 \end{itemize}
+}
 }
 \source{
 \url{https://www.apple.com/covid19/mobility}

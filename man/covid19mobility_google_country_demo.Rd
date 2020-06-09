@@ -7,6 +7,7 @@
 \format{
 A data frame with 83160 rows and 7 variables:
 \begin{itemize}
+\itemize{
 \item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source.
 The counties dataset provides county and state. They are combined and
@@ -22,6 +23,7 @@ use \code{iso_3166_2}
 Includes \code{total_cases} and \code{total_deaths}, cumulative measures of both.
 \item value - number of cases of each data type
 \end{itemize}
+}
 }
 \source{
 \url{https://www.google.com/covid19/mobility/}
