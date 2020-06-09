@@ -8,7 +8,7 @@ refresh_covid19mobility_google_country()
 }
 \value{
 A tibble meeting the Covid19R Project data standard. Columns include:
-\itemize{
+\begin{itemize}
 \item date - The date in YYYY-MM-DD form
 \item location - The name of the location as provided by the data source.
 \item location_type - The type of location using the covid19R controlled vocabulary.
@@ -16,7 +16,7 @@ A tibble meeting the Covid19R Project data standard. Columns include:
 \item location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use \code{iso_3166_2}
 \item data_type - the type of data in that given row. See description.
 \item value - number of cases of each data type
-}
+\end{itemize}
 }
 \description{
 From Google:
@@ -38,14 +38,14 @@ long it takes to produce the datasets."
 
 Data represents changes from baseline visits for the following types
 of locations visited:
-\itemize{
+\begin{itemize}
 \item retail and recreation
 \item grocery and pharmacy
 \item parks
 \item transit stations
 \item workplaces
 \item residential
-}
+\end{itemize}
 }
 \examples{
 \dontrun{

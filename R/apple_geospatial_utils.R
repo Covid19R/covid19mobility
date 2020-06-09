@@ -39,7 +39,8 @@ add_subregion_codes <- function(adf) {
   # from https://github.com/olahol/iso-3166-2.js
   subregion_codes <- load_subregion_codes()
 
-  # make a data frame with modified locations for correct merging with international standards
+  # make a data frame with modified locations for correct merging with
+  # international standards
   adf <- adf %>%
     dplyr::mutate(old_loc = location)
 
@@ -101,15 +102,19 @@ add_city_codes <- function(adf) {
 #'
 #' @param codes tibble with a column containing standardized codes
 #' @param adf tibble of data
-#' @param name_col what column in the codes tibble contains the name matching info
-#' @param code_col what column in the codes tibble contains the standardized codes
-#' @param code_name what is the name of the code standard - defaults to the same as code_col
+#' @param name_col what column in the codes tibble contains
+#' the name matching info
+#' @param code_col what column in the codes tibble contains
+#' the standardized codes
+#' @param code_name what is the name of the code standard -
+#' defaults to the same as code_col
 #'
 #' @keywords internal
 #' @noRd
 #' @return
 #'
-location_code_merge_pivot <- function(codes, adf, name_col, code_col, code_name = code_col) {
+location_code_merge_pivot <- function(codes, adf, name_col,
+                                      code_col, code_name = code_col) {
   dplyr::left_join(adf,
     codes %>%
       dplyr::select({{ name_col }}, {{ code_col }}),

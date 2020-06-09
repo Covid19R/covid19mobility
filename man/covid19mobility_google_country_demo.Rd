@@ -6,15 +6,22 @@
 \title{Demo Data of the Apple Covid-19 Mobility Data for Countries}
 \format{
 A data frame with 83160 rows and 7 variables:
-\itemize{
+\begin{itemize}
 \item date - The date in YYYY-MM-DD form
-\item location - The name of the location as provided by the data source. The counties dataset provides county and state. They are combined and separated by a \verb{,}, and can be split by \code{tidyr::separate()}, if you wish.
-\item location_type - The type of location using the covid19R controlled vocabulary.
-\item location_code - A standardized location code using a national or international standard. In this case, FIPS state or county codes. See https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code and https://en.wikipedia.org/wiki/FIPS_county_code for more
-\item location_code_type The type of standardized location code being used according to the covid19R controlled vocabulary. Here we use \code{fips_code}
-\item data_type - the type of data in that given row. Includes \code{total_cases} and \code{total_deaths}, cumulative measures of both.
+\item location - The name of the location as provided by the data source.
+The counties dataset provides county and state. They are combined and
+separated by a \verb{,}, and can be split by \code{tidyr::separate()}, if you wish.
+\item location_type - The type of location using the covid19R controlled
+vocabulary.
+\item location_code - A standardized location code using a national or
+international standard. In this case, ISO 3166-2 country codes.
+\item location_code_type The type of standardized location code
+being used according to the covid19R controlled vocabulary. Here we
+use \code{iso_3166_2}
+\item data_type - the type of data in that given row.
+Includes \code{total_cases} and \code{total_deaths}, cumulative measures of both.
 \item value - number of cases of each data type
-}
+\end{itemize}
 }
 \source{
 \url{https://www.google.com/covid19/mobility/}
