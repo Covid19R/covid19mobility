@@ -10,3 +10,4 @@ scratch.R
 ^data-raw$
 docs
 ^\.travis\.yml$
+^CRAN-RELEASE$
