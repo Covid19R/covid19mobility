@@ -82,4 +82,4 @@ devtools::check_rhub(env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always"))
 devtools::check_win_release()
 devtools::release_checks()
 
-#devtools::release()
+devtools::release()
