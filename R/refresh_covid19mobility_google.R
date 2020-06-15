@@ -320,14 +320,20 @@ read_google_mobility <- function() {
 }
 
 covid_19_r_format <- . %>%
+  janitor::clean_names() %>%
   dplyr::select(
-    date,
-    location,
-    location_type,
-    location_code,
-    location_code_type,
-    data_type,
-    value
+    any_of(
+      c(
+        "date",
+        "location",
+        "location_type",
+        "location_code",
+        "location_code_type",
+        "state",
+        "data_type",
+        "value"
+      )
+    )
   ) %>%
   dplyr::mutate(
     data_type = gsub("_from_baseline", "", data_type),
