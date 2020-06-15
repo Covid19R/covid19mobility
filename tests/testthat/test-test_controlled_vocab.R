@@ -36,16 +36,35 @@ expect_contains <- function(vec1, vec2) {
 
 # OK, the testing!
 
-# the functino to run the tests
+# the function to run the tests
 
 test_one_refresh_for_vocab <- function(arow) {
+
   res <- eval(call(arow$fun))
 
   # make sure there's there there
   expect_gt(nrow(res), 0)
 
+  last_col <- 7
+
   # make sure column names are in order
-  expect_named(res[, 1:7], refresh_col_names) # allow for other cols
+  if (arow$fun == "refresh_covid19mobility_google_us_counties") {
+    refresh_col_names <-
+      c(
+        "date",
+        "location",
+        "location_type",
+        "location_code",
+        "location_code_type",
+        "state",
+        "data_type",
+        "value"
+      )
+
+    last_col <- 8
+  }
+
+  expect_named(res[, 1:last_col], refresh_col_names) # allow for other cols
 
   # loc types
   expect_contains(res$location_type, location_types)
