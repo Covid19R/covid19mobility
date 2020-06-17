@@ -48,7 +48,7 @@ of locations visited:
 }
 }
 \examples{
-\dontrun{
+\donttest{
 covid19mobility_google_us_counties <- refresh_covid19mobility_google_us_counties()
 
 head(covid19mobility_google_us_counties)

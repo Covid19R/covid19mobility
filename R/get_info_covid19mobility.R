@@ -6,7 +6,7 @@
 #' @export get_info_covid19mobility
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' # get the dataset info from this package
 #' get_info_covid19mobility()

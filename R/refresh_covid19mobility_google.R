@@ -42,7 +42,7 @@
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' covid19mobility_google_country <- refresh_covid19mobility_google_country()
 #'
 #' head(covid19mobility_google_country)
@@ -111,7 +111,7 @@ refresh_covid19mobility_google_country <- function() {
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' covid19mobility_google_subregions <- refresh_covid19mobility_google_subregions()
 #'
 #' head(covid19mobility_google_subregions)
@@ -230,7 +230,7 @@ refresh_covid19mobility_google_subregions <- function() {
 #' @references The Covid19R Project \url{https://covid19r.github.io/documentation/}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' covid19mobility_google_us_counties <- refresh_covid19mobility_google_us_counties()
 #'
 #' head(covid19mobility_google_us_counties)

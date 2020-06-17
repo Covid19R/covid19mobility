@@ -8,7 +8,7 @@
 #' @references \url{https://www.apple.com/covid19/mobility}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' mob <- refresh_covid19mobility_apple_country()
 #'
@@ -41,7 +41,7 @@ refresh_covid19mobility_apple_country <- function() {
 #' @references \url{https://www.apple.com/covid19/mobility}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' mob <- refresh_covid19mobility_apple_subregion()
 #'
@@ -74,7 +74,7 @@ refresh_covid19mobility_apple_subregion <- function() {
 #' @references \url{https://www.apple.com/covid19/mobility}
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' mob <- refresh_covid19mobility_apple_city()
 #'

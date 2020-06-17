@@ -48,7 +48,7 @@ of locations visited:
 }
 }
 \examples{
-\dontrun{
+\donttest{
 covid19mobility_google_country <- refresh_covid19mobility_google_country()
 
 head(covid19mobility_google_country)

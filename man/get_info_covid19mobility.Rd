@@ -13,7 +13,7 @@ a tibble of information about the datasets in this package
 Returns information about the datasets in this package for covid19R harvesting
 }
 \examples{
-\dontrun{
+\donttest{
 
 # get the dataset info from this package
 get_info_covid19mobility()

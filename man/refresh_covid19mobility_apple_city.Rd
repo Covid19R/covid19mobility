@@ -13,7 +13,7 @@ Returns a tibble that meets the Covid19R Project tidy data standard
 Pulls in the CSV of the Apple Mobility Data, filters to cities, and reshapes it
 }
 \examples{
-\dontrun{
+\donttest{
 
 mob <- refresh_covid19mobility_apple_city()
 

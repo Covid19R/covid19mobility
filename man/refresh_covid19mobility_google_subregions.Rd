@@ -48,7 +48,7 @@ of locations visited:
 }
 }
 \examples{
-\dontrun{
+\donttest{
 covid19mobility_google_subregions <- refresh_covid19mobility_google_subregions()
 
 head(covid19mobility_google_subregions)
