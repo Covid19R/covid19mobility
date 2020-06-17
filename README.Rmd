@@ -56,7 +56,7 @@ get_info_covid19mobility() %>%
 The refresh methods bring in the different data sets. Currently available are:
 * `refresh_covid19mobility_apple_country()` - [Apple Mobility Data](https://www.apple.com/covid19/mobility) at the country level.  
 * `refresh_covid19mobility_subregion()` - [Apple Mobility Data](https://www.apple.com/covid19/mobility) at the state/subregion level.  
-* `refresh_covid19mobility_apple_city()` - [Apple Mobility Data](https://www.apple.com/covid19/mobility) at the city level. Contains some lat/longs for some cities.
+* `refresh_covid19mobility_apple_city()` - [Apple Mobility Data](https://www.apple.com/covid19/mobility) at the city level. Contains some lat/longs for some cities.  
 * `refresh_covid19mobility_google_country()` - [Google Mobility Data](https://www.google.com/covid19/mobility/) at the country level.  
 * `refresh_covid19mobility_google_subregions()` - [Google Mobility Data](https://www.google.com/covid19/mobility/) at the state/subregion level.  
 * `refresh_covid19mobility_google_us_counties()` - [Google Mobility Data](https://www.google.com/covid19/mobility/) at the US county level with FIPS codes.
