@@ -67,6 +67,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -131,8 +134,9 @@
               <span class="kw">fill</span> <span class="kw">=</span> <span class="fl">NA</span>,
               <span class="kw">color</span> <span class="kw">=</span> <span class="st">"black"</span>)+
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Data from Google Covid-19 Mobility Report\n
-       https://www.google.com/covid19/mobility/"</span>)</pre></body></html></div>
-<p><img src="google_work_v_play_files/figure-html/weird_ts_plot-1.png" width="700"></p>
+       https://www.google.com/covid19/mobility/"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="st">""</span>) + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span>(<span class="st">"Relative % Change"</span>)</pre></body></html></div>
+<p><img src="https://github.com/Covid19R/covid19mobility/raw/master/data-raw/goog_gam.jpg"></p>
 <p>Sure looks like inverse trends! Maybe? Let’s plot the correlation!</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">goog_wp_wide</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span>(<span class="no">goog_wp</span>,
                             <span class="kw">names_from</span> <span class="kw">=</span> <span class="no">data_type</span>,

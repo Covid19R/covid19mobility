@@ -36,7 +36,14 @@ Cool - we've got workplace and residential in there. I wonder if folk were spend
 
 First, let's just look at, well, everything!
 
-```{r weird_ts_plot, message=FALSE, warning=FALSE}
+```{r goog_wp, include = FALSE, results = "hide"}
+goog_wp <- goog %>%
+  filter(data_type %in% c("workplaces_perc_ch",
+                          "residential_perc_ch")) %>%
+  filter(!is.na(value))
+```
+
+```{r weird_ts_plot, message=FALSE, warning=FALSE, eval = FALSE}
 goog_wp <- goog %>%
   filter(data_type %in% c("workplaces_perc_ch",
                           "residential_perc_ch")) %>%
@@ -53,8 +60,11 @@ ggplot(goog_wp,
               fill = NA,
               color = "black")+
   labs(caption = "Data from Google Covid-19 Mobility Report\n
-       https://www.google.com/covid19/mobility/")
+       https://www.google.com/covid19/mobility/") +
+  xlab("") + ylab("Relative % Change")
 ```
+
+![](https://github.com/Covid19R/covid19mobility/raw/master/data-raw/goog_gam.jpg)
 
 Sure looks like inverse trends! Maybe? Let's plot the correlation!
 
