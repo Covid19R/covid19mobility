@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covid19mobility</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -107,6 +107,9 @@
       <a href="../articles/plot_us_mobility.html">What are mobility trends like in the US?</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -146,11 +149,22 @@
     <p>a tibble of information about the datasets in this package</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 
 <span class='co'># get the dataset info from this package</span>
-<span class='fu'>get_info_covid19mobility</span>()
-}</div></pre>
+<span class='fu'>get_info_covid19mobility</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 6 x 10</span><span>
+#&gt;   data_set_name package_name function_to_get… data_details data_url license_url
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      
+#&gt; </span><span style='color: #555555;'>1</span><span> covid19mobil… covid19mobi… refresh_covid19… Data reflec… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'>2</span><span> covid19mobil… covid19mobi… refresh_covid19… Data reflec… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'>3</span><span> covid19mobil… covid19mobi… refresh_covid19… Data reflec… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'>4</span><span> covid19mobil… covid19mobi… refresh_covid19… Changes for… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'>5</span><span> covid19mobil… covid19mobi… refresh_covid19… Changes for… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'>6</span><span> covid19mobil… covid19mobi… refresh_covid19… Changes for… https:/… https://ww…
+#&gt; </span><span style='color: #555555;'># … with 4 more variables: data_types </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, location_types </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   spatial_extent </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, has_geospatial_info </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span></div><div class='input'># }
+
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
