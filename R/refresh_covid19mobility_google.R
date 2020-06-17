@@ -298,6 +298,8 @@ read_google_mobility <- function() {
       country_region = readr::col_character(),
       sub_region_1 = readr::col_character(),
       sub_region_2 = readr::col_character(),
+      iso_3166_2_code = readr::col_character(),
+      census_fips_code = readr::col_character(),
       date = readr::col_date(),
       retail_and_recreation_percent_change_from_baseline = readr::col_integer(),
       grocery_and_pharmacy_percent_change_from_baseline = readr::col_integer(),
