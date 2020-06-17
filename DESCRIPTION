@@ -1,44 +1,53 @@
 Package: covid19mobility
-Title: Fetches Data on Covid-19 Mobility Trends from Different Sources
+Title: Fetches Data on Covid-19 Mobility Trends from Different
+    Sources
 Version: 0.1.0
 Authors@R: 
-    person(given = "Jarrett",
+    c(person(given = "Jarrett",
            family = "Byrnes",
            role = c("aut", "cre"),
            email = "jarrett.byrnes@umb.edu",
-           comment = c(ORCID = "0000-0002-9791-9472"))
-Description: Scrapes trends in mobility after the Covid-19 outbreak from 
-            different sources. Currently, the package scrapes data from Google <https://www.google.com/covid19/mobility/>, 
-            Apple <https://www.apple.com/covid19/mobility>, and will add others. The data returned uses the tidy
-            Covid19R project data standard <https://covid19r.github.io/documentation/>
-            as well as the controlled vocabularies for measurement types.
+           comment = c(ORCID = "0000-0002-9791-9472")),
+    person(given = "Amanda",
+           family = "Dobbyn",
+           role = "ctb",
+           email = "amanda.e.dobbyn@gmail.com"))
+Description: Scrapes trends in mobility after the Covid-19
+    outbreak from different sources. Currently, the package scrapes data
+    from Google <https://www.google.com/covid19/mobility/>, Apple
+    <https://www.apple.com/covid19/mobility>, and will add others. The
+    data returned uses the tidy Covid19R project data standard
+    <https://covid19r.github.io/documentation/> as well as the controlled
+    vocabularies for measurement types.
 License: MIT + file LICENSE
+URL: https://github.com/Covid19R/covid19mobility
+BugReports: https://github.com/Covid19R/covid19mobility/issues
+Depends: 
+    R (>= 2.10)
+Imports: 
+    dplyr,
+    glue,
+    janitor,
+    jsonlite,
+    lubridate,
+    magrittr,
+    readr,
+    stringi,
+    tidyr,
+    tigris,
+    utils
 Suggests: 
-    testthat,
-    knitr,
-    rmarkdown,
+    gganimate,
     ggplot2,
+    knitr,
+    rgeos,
+    rmarkdown,
     rnaturalearth,
     sf,
-    gganimate,
-    rgeos
+    testthat
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
-Imports: 
-    jsonlite,
-    readr,
-    tidyr,
-    magrittr,
-    dplyr,
-    utils,
-    lubridate,
-    tigris,
-    stringi,
-    glue
-Depends: 
-    R (>= 2.10)
-VignetteBuilder: knitr
-URL: https://github.com/Covid19R/covid19mobility
-BugReports: https://github.com/Covid19R/covid19mobility/issues

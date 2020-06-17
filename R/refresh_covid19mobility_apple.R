@@ -28,7 +28,7 @@ refresh_covid19mobility_apple_country <- function() {
   mob_data %>%
     dplyr::mutate(location_type = "country") %>%
     reorder_apple() %>%
-    dplyr::select(-`sub-region`, -country)
+    dplyr::select(-sub_region, -country)
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Subregions
@@ -61,7 +61,7 @@ refresh_covid19mobility_apple_subregion <- function() {
   mob_data %>%
     dplyr::mutate(location_type = "state") %>%
     reorder_apple() %>%
-    dplyr::select(-`sub-region`)
+    dplyr::select(-sub_region)
 }
 
 #' Refresh The Apple Covid-19 Mobility Data for Cities
@@ -147,7 +147,8 @@ reshape_apple_mob_data <- function(mob_data) {
       data_type == "driving" ~ "driving_req_rel_volume",
       data_type == "walking" ~ "walking_req_rel_volume",
       data_type == "transit" ~ "transit_req_rel_volume"
-    ))
+    )) %>%
+    janitor::clean_names()
 }
 
 reorder_apple <- . %>%
