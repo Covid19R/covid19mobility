@@ -40,7 +40,8 @@ First, let's just look at, well, everything!
 goog_wp <- goog %>%
   filter(data_type %in% c("workplaces_perc_ch",
                           "residential_perc_ch")) %>%
-  filter(!is.na(value))
+  filter(!is.na(value),
+         !is.na(date))
 ```
 
 ```{r weird_ts_plot, message=FALSE, warning=FALSE, eval = FALSE}
@@ -71,8 +72,10 @@ Sure looks like inverse trends! Maybe? Let's plot the correlation!
 ```{r cor_plot, message=FALSE, warning=FALSE}
 goog_wp_wide <- pivot_wider(goog_wp,
                             names_from = data_type,
-                            values_from = value)
-ggplot(goog_wp_wide,
+                            values_from = value) %>%
+  filter(!is.na(residential_perc_ch)) #some unevenness is reporting
+
+ggplot(goog_wp_wide %>% filter(workplaces_perc_ch<=100), #a few outliers
        aes(x = workplaces_perc_ch, 
            y = residential_perc_ch,
            color = as.numeric(date))) +
