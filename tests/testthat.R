@@ -1,6 +1,6 @@
 library(testthat)
-library(glue)
 library(covid19mobility)
+library(glue)
 
 refresh_funs <- dplyr::tribble(
   ~fun, ~len, ~date_check,
