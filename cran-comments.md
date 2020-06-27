@@ -9,3 +9,5 @@
 
 * This is a new release.
 * Build time down to 4m 27.9s
+* Tests fixed
+* Problem with previous submission was on CRAN end - libgdal problem in Debian
