@@ -5,7 +5,7 @@ check_len <- function(arow) {
     glue::glue("The number of rows from {arow$fun} is equal to
                  or greater than {arow$date_check}"),
     expect_gt(
-      nrow(eval(call(arow$fun))),
+      nrow(arow$dat[[1]]), #get the data),
       arow$len - 1
     ) # nrows on 2020-05-11
   )

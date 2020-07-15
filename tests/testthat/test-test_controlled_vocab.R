@@ -40,7 +40,7 @@ expect_contains <- function(vec1, vec2) {
 
 test_one_refresh_for_vocab <- function(arow) {
 
-  res <- eval(call(arow$fun))
+  res <- arow$dat[[1]] #get the data
 
   # make sure there's there there
   expect_gt(nrow(res), 0)
