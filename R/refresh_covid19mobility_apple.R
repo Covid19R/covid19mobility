@@ -129,7 +129,7 @@ reshape_apple_mob_data <- function(mob_data) {
   # reshape dates
   mob_data %>%
     tidyr::pivot_longer(
-      cols = dplyr::starts_with("2020"),
+      cols = dplyr::starts_with("202"), #debug here
       names_to = "date",
       values_to = "value"
     ) %>%
