@@ -1,7 +1,7 @@
 Package: covid19mobility
 Title: Fetches Data on Covid-19 Mobility Trends from Different
     Sources
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     c(person(given = "Jarrett",
            family = "Byrnes",
@@ -51,4 +51,4 @@ VignetteBuilder:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

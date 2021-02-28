@@ -14,15 +14,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-Let's load the data, and filter down to the United States of America.
+Let's load the cached data, and filter down to the United States of America.
 
 ```{r setup, warning=FALSE, message=FALSE}
 library(covid19mobility)
 library(dplyr)
 
-us_mobile <- refresh_covid19mobility_apple_country() %>%
-  filter(location_code == "US")
+#if you want to try this with fresh data
+# us_mobile <- refresh_covid19mobility_apple_country() %>%
+#   filter(location_code == "US")
 
+us_mobile <- covid19mobility_apple_country_demo %>%
+  filter(location_code == "US")
 ```
 
 Now, let's plot it!

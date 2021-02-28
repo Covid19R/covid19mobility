@@ -13,7 +13,7 @@ refresh_funs <- dplyr::tribble(
   "refresh_covid19mobility_google_us_counties", 1708692, "2020-06-04" # as of 2020
 )
 
-refresh_funs <- refresh_funs %>%
-  dplyr::mutate(dat = lapply(fun, function(x) eval(call(x))))
+# refresh_funs <- refresh_funs %>%
+#   dplyr::mutate(dat = lapply(fun, function(x) eval(call(x))))
 
-test_check("covid19mobility")
+#test_check("covid19mobility")
